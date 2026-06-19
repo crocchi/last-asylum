@@ -1,0 +1,450 @@
+(function () {
+	var supportedLanguages = ["en", "it", "es", "ja"];
+	var fallbackLanguage = "en";
+	var storageKey = "last-asylum-language";
+
+	var translations = {
+		en: {
+			pageTitle: "Last Asylum: Plague | Fan Website | Mobile Survival Strategy",
+			metaDescription: "Fan website for Last Asylum: Plague with guides, gift codes, hero roster, events, and building tools.",
+			navBuildings: "Buildings",
+			navResearch: "Research Tree",
+			navGiftCode: "Gift Code",
+			navHero: "Hero",
+			navBeginner: "Beginner Guide",
+			navEvents: "Events",
+			badgeMobileGame: "Mobile Game",
+			badgeGuide: "Guide and Strategy",
+			badgeFan: "Fan Website",
+			heroTitle: "Survive humanity's last night.",
+			heroIntro: "Last Asylum: Plague is a mobile survival strategy game where you play a plague doctor rebuilding a sanctuary after a devastating pandemic.",
+			ios: "iOS",
+			android: "Android",
+			heroPanelLabel: "Work in Progress",
+			heroPanelTitle: "Wiva - Italian Ally!",
+			heroPanelText: "Manage resources, recruit heroes, and defend the sanctuary from infected rats and mutated creatures. The game combines:",
+			statCityBuilding: "City Building",
+			statCityBuildingText: "Build and manage your sanctuary",
+			statResources: "Resource Management",
+			statResourcesText: "Gather and spend resources strategically",
+			statEvents: "PvE and PvP Events",
+			statEventsText: "Join cooperative and competitive events",
+			statHeroes: "Hero Progression",
+			statHeroesText: "Unlock and upgrade unique heroes",
+			statWars: "Alliance Wars",
+			statWarsText: "Compete in alliance events",
+			giftTag: "Last Asylum - Gift Code",
+			giftTitle: "How to redeem your rewards.",
+			giftStep1: "Step 1: Launch the game",
+			giftStep2: "Step 2: Tap your profile icon in the upper left corner",
+			giftStep3: "Step 3: Tap Settings",
+			giftStep4: "Step 4: From the settings menu, tap Gift Code",
+			giftStep5: "Step 5: Type or copy and paste a code into the text box and tap OK",
+			ok: "OK",
+			heroRosterTag: "Hero Roster",
+			heroRosterTitle: "The heroes leading survival.",
+			heroRosterText: "Updated roster with names and roles from Last Asylum Guide and the Lootbar guide: frontline tanks, burst carries, and supports for PvE and PvP teams. Select up to three heroes and compare skills, effects, and stats in one panel.",
+			compareTag: "Hero Compare",
+			compareText: "Select up to 3 heroes from the roster to compare roles, max stats, and every skill side by side.",
+			resetCompare: "Reset compare",
+			maxSkillStats: "Max skill stats",
+			skills: "Skills",
+			compareHeroes: "Compare Heroes",
+			buildTeam: "Build Your Team!",
+			eventsTag: "Live Activities",
+			eventsTitle: "Events and key activities in Last Asylum: Plague.",
+			eventsText: "A single collection of real events and activities from official store sources and detailed community guides, without splitting them by category.",
+			buildingsTag: "Buildings Planner",
+			buildingsTitle: "Calculate the resources required for each construction.",
+			buildingsText: "Compact form with all buildings from the Last Asylum Guide calculator: choose a building, current level, and target level to see the required RSS.",
+			building: "Building",
+			currentLevel: "Current level",
+			targetLevel: "Target level",
+			wood: "Wood",
+			grain: "Grain",
+			herbs: "Herbs",
+			time: "Time",
+			steps: "Steps",
+			buildingInitialNote: "Select a building to see costs.",
+			rights: "Last Asylum Plague. All rights reserved.",
+			details: "Open details",
+			selected: "Selected",
+			compare: "Compare",
+			cardHint: "Open details or add to comparison",
+			slot: "Slot",
+			emptySlot: "Empty slot",
+			noHeroSelected: "No hero selected. Use the Compare button on cards to see all skills side by side.",
+			faction: "Faction",
+			classLabel: "Class",
+			rarity: "Rarity",
+			overview: "Overview",
+			source: "Source",
+			type: "Type",
+			cooldown: "Cooldown",
+			damage: "Damage",
+			additionalEffects: "Additional Effects",
+			skillSlot: "Skill Slot",
+			noSkill: "No skill",
+			heroFaction: "Hero Faction",
+			level: "Level",
+			partialData: "Partial data for {building}: the source site does not cover every step in this range. The resources shown only sum the available levels.",
+			buildingNote: "{building} from level {current} to level {target}. Data source: lastasylumguide.com/calculators/buildings. The source site warns that data can change with patches.",
+			eventSource: "Source: {source}",
+			openEvent: "Open {name} full screen"
+		},
+		it: {
+			pageTitle: "Last Asylum: Plague | Sito Fan | Strategia Survival Mobile",
+			metaDescription: "Sito fan per Last Asylum: Plague con guide, codici regalo, roster eroi, eventi e strumenti building.",
+			navBuildings: "Edifici",
+			navResearch: "Albero Ricerca",
+			navGiftCode: "Codici Regalo",
+			navHero: "Eroi",
+			navBeginner: "Guida Principianti",
+			navEvents: "Eventi",
+			badgeMobileGame: "Gioco Mobile",
+			badgeGuide: "Guide e Strategia",
+			badgeFan: "Sito Fan",
+			heroTitle: "Resisti all'ultima notte dell'umanita.",
+			heroIntro: "Last Asylum: Plague e un gioco mobile di sopravvivenza strategica dove interpreti un medico della peste che deve ricostruire un santuario dopo una pandemia devastante.",
+			ios: "iOS",
+			android: "Android",
+			heroPanelLabel: "Work in Progress",
+			heroPanelTitle: "Wiva - Italian Ally!",
+			heroPanelText: "Gestisci risorse, recluta eroi e difendi il santuario da orde di ratti infetti e creature mutate. Il gioco unisce:",
+			statCityBuilding: "City Building",
+			statCityBuildingText: "Costruisci e gestisci il tuo santuario",
+			statResources: "Gestione Risorse",
+			statResourcesText: "Raccogli e usa risorse in modo strategico",
+			statEvents: "Eventi PvE e PvP",
+			statEventsText: "Partecipa a eventi cooperativi e competitivi",
+			statHeroes: "Progressione Eroi",
+			statHeroesText: "Sblocca e potenzia eroi unici",
+			statWars: "Guerre tra Alleanze",
+			statWarsText: "Competi con eventi tra alleanze",
+			giftTag: "Last Asylum - Codici Regalo",
+			giftTitle: "Come riscattare le ricompense.",
+			giftStep1: "Step 1: Avvia il gioco",
+			giftStep2: "Step 2: Tocca l'icona profilo in alto a sinistra",
+			giftStep3: "Step 3: Tocca Impostazioni",
+			giftStep4: "Step 4: Dal menu impostazioni, tocca Gift Code",
+			giftStep5: "Step 5: Scrivi o incolla un codice nel campo e tocca OK",
+			ok: "OK",
+			heroRosterTag: "Roster Eroi",
+			heroRosterTitle: "Gli eroi che guidano la sopravvivenza.",
+			heroRosterText: "Roster aggiornato con nomi e ruoli reali citati da Last Asylum Guide e dalla guida Lootbar: tank frontali, carry da burst e supporti per team PvE e PvP. Seleziona fino a tre eroi e confronta skill, effetti e stat nello stesso pannello.",
+			compareTag: "Confronto Eroi",
+			compareText: "Seleziona fino a 3 eroi dal roster per vedere ruolo, stat massime e tutte le skill una accanto all'altra.",
+			resetCompare: "Reset confronto",
+			maxSkillStats: "Statistiche skill massime",
+			skills: "Skill",
+			compareHeroes: "Confronta Eroi",
+			buildTeam: "Crea il tuo team!",
+			eventsTag: "Attivita Live",
+			eventsTitle: "Eventi e attivita chiave di Last Asylum: Plague.",
+			eventsText: "Raccolta unica degli eventi e delle attivita reali emerse dalle fonti ufficiali dello store e dalle guide community piu dettagliate, senza separarli per categoria.",
+			buildingsTag: "Planner Edifici",
+			buildingsTitle: "Calcola le risorse richieste per ogni costruzione.",
+			buildingsText: "Form compatto con tutte le costruzioni del calcolatore di Last Asylum Guide: scegli edificio, livello attuale e livello target, poi trovi subito sotto le RSS richieste.",
+			building: "Costruzione",
+			currentLevel: "Livello attuale",
+			targetLevel: "Livello target",
+			wood: "Wood",
+			grain: "Grain",
+			herbs: "Herbs",
+			time: "Time",
+			steps: "Steps",
+			buildingInitialNote: "Seleziona una costruzione per vedere i costi.",
+			rights: "Last Asylum Plague. Tutti i diritti riservati.",
+			details: "Apri dettagli",
+			selected: "Selezionato",
+			compare: "Confronta",
+			cardHint: "Apri scheda o aggiungi al confronto",
+			slot: "Slot",
+			emptySlot: "Slot vuoto",
+			noHeroSelected: "Nessun eroe selezionato. Usa il pulsante Confronta sulle card per vedere tutte le skill affiancate.",
+			faction: "Fazione",
+			classLabel: "Classe",
+			rarity: "Rarita",
+			overview: "Overview",
+			source: "Fonte",
+			type: "Tipo",
+			cooldown: "Cooldown",
+			damage: "Danno",
+			additionalEffects: "Effetti aggiuntivi",
+			skillSlot: "Slot Skill",
+			noSkill: "Nessuna skill",
+			heroFaction: "Fazione Eroe",
+			level: "Livello",
+			partialData: "Dati parziali per {building}: il sito sorgente non copre ogni step in questo intervallo. Le risorse mostrate sommano solo i livelli disponibili.",
+			buildingNote: "{building} dal livello {current} al livello {target}. Fonte dati: lastasylumguide.com/calculators/buildings. Il sito sorgente avvisa che i dati possono cambiare con le patch.",
+			eventSource: "Fonte: {source}",
+			openEvent: "Apri {name} a schermo intero"
+		},
+		es: {
+			pageTitle: "Last Asylum: Plague | Sitio Fan | Estrategia Survival Mobile",
+			metaDescription: "Sitio fan de Last Asylum: Plague con guias, codigos regalo, heroes, eventos y herramientas de construccion.",
+			navBuildings: "Edificios",
+			navResearch: "Arbol de investigacion",
+			navGiftCode: "Codigo regalo",
+			navHero: "Heroes",
+			navBeginner: "Guia inicial",
+			navEvents: "Eventos",
+			badgeMobileGame: "Juego movil",
+			badgeGuide: "Guia y estrategia",
+			badgeFan: "Sitio fan",
+			heroTitle: "Sobrevive a la ultima noche de la humanidad.",
+			heroIntro: "Last Asylum: Plague es un juego movil de estrategia y supervivencia en el que eres un medico de la peste que reconstruye un santuario tras una pandemia devastadora.",
+			ios: "iOS",
+			android: "Android",
+			heroPanelLabel: "Trabajo en progreso",
+			heroPanelTitle: "Wiva - Aliado italiano!",
+			heroPanelText: "Gestiona recursos, recluta heroes y defiende el santuario de ratas infectadas y criaturas mutadas. El juego combina:",
+			statCityBuilding: "Construccion de ciudad",
+			statCityBuildingText: "Construye y gestiona tu santuario",
+			statResources: "Gestion de recursos",
+			statResourcesText: "Recolecta y usa recursos con estrategia",
+			statEvents: "Eventos PvE y PvP",
+			statEventsText: "Participa en eventos cooperativos y competitivos",
+			statHeroes: "Progresion de heroes",
+			statHeroesText: "Desbloquea y mejora heroes unicos",
+			statWars: "Guerras de alianzas",
+			statWarsText: "Compite en eventos entre alianzas",
+			giftTag: "Last Asylum - Codigo regalo",
+			giftTitle: "Como canjear tus recompensas.",
+			giftStep1: "Paso 1: Abre el juego",
+			giftStep2: "Paso 2: Toca tu icono de perfil arriba a la izquierda",
+			giftStep3: "Paso 3: Toca Ajustes",
+			giftStep4: "Paso 4: En ajustes, toca Gift Code",
+			giftStep5: "Paso 5: Escribe o pega un codigo y toca OK",
+			ok: "OK",
+			heroRosterTag: "Lista de heroes",
+			heroRosterTitle: "Los heroes que lideran la supervivencia.",
+			heroRosterText: "Lista actualizada con nombres y roles de Last Asylum Guide y la guia de Lootbar: tanques de primera linea, carries de burst y supports para equipos PvE y PvP. Selecciona hasta tres heroes y compara habilidades, efectos y estadisticas en un panel.",
+			compareTag: "Comparar heroes",
+			compareText: "Selecciona hasta 3 heroes para comparar roles, estadisticas maximas y habilidades lado a lado.",
+			resetCompare: "Reiniciar comparacion",
+			maxSkillStats: "Estadisticas maximas",
+			skills: "Habilidades",
+			compareHeroes: "Comparar heroes",
+			buildTeam: "Crea tu equipo!",
+			eventsTag: "Actividades en vivo",
+			eventsTitle: "Eventos y actividades clave de Last Asylum: Plague.",
+			eventsText: "Una coleccion unica de eventos y actividades reales desde fuentes oficiales y guias detalladas de la comunidad, sin separarlos por categoria.",
+			buildingsTag: "Planificador de edificios",
+			buildingsTitle: "Calcula los recursos necesarios para cada construccion.",
+			buildingsText: "Formulario compacto con todos los edificios del calculador de Last Asylum Guide: elige edificio, nivel actual y nivel objetivo para ver las RSS necesarias.",
+			building: "Edificio",
+			currentLevel: "Nivel actual",
+			targetLevel: "Nivel objetivo",
+			wood: "Madera",
+			grain: "Grano",
+			herbs: "Hierbas",
+			time: "Tiempo",
+			steps: "Pasos",
+			buildingInitialNote: "Selecciona un edificio para ver los costes.",
+			rights: "Last Asylum Plague. Todos los derechos reservados.",
+			details: "Ver detalles",
+			selected: "Seleccionado",
+			compare: "Comparar",
+			cardHint: "Abre detalles o agrega a comparacion",
+			slot: "Espacio",
+			emptySlot: "Espacio vacio",
+			noHeroSelected: "No hay heroes seleccionados. Usa Comparar en las tarjetas para ver todas las habilidades lado a lado.",
+			faction: "Faccion",
+			classLabel: "Clase",
+			rarity: "Rareza",
+			overview: "Resumen",
+			source: "Fuente",
+			type: "Tipo",
+			cooldown: "Enfriamiento",
+			damage: "Dano",
+			additionalEffects: "Efectos adicionales",
+			skillSlot: "Espacio de habilidad",
+			noSkill: "Sin habilidad",
+			heroFaction: "Faccion del heroe",
+			level: "Nivel",
+			partialData: "Datos parciales para {building}: la fuente no cubre todos los pasos de este intervalo. Los recursos mostrados solo suman los niveles disponibles.",
+			buildingNote: "{building} del nivel {current} al nivel {target}. Fuente: lastasylumguide.com/calculators/buildings. La fuente avisa que los datos pueden cambiar con parches.",
+			eventSource: "Fuente: {source}",
+			openEvent: "Abrir {name} a pantalla completa"
+		},
+		ja: {
+			pageTitle: "Last Asylum: Plague | ファンサイト | モバイルサバイバル戦略",
+			metaDescription: "Last Asylum: Plague のファンサイト。ガイド、ギフトコード、ヒーロー、イベント、建築ツールを掲載。",
+			navBuildings: "建築",
+			navResearch: "研究ツリー",
+			navGiftCode: "ギフトコード",
+			navHero: "ヒーロー",
+			navBeginner: "初心者ガイド",
+			navEvents: "イベント",
+			badgeMobileGame: "モバイルゲーム",
+			badgeGuide: "ガイドと戦略",
+			badgeFan: "ファンサイト",
+			heroTitle: "人類最後の夜を生き延びろ。",
+			heroIntro: "Last Asylum: Plague は、壊滅的なパンデミック後に聖域を再建するペスト医師として戦うモバイルサバイバル戦略ゲームです。",
+			ios: "iOS",
+			android: "Android",
+			heroPanelLabel: "制作中",
+			heroPanelTitle: "Wiva - イタリア同盟!",
+			heroPanelText: "資源を管理し、ヒーローを集め、感染したネズミと変異生物から聖域を守ります。ゲーム要素:",
+			statCityBuilding: "都市建設",
+			statCityBuildingText: "聖域を建設して管理",
+			statResources: "資源管理",
+			statResourcesText: "資源を戦略的に集めて使用",
+			statEvents: "PvE / PvP イベント",
+			statEventsText: "協力・対戦イベントに参加",
+			statHeroes: "ヒーロー育成",
+			statHeroesText: "個性的なヒーローを解放して強化",
+			statWars: "同盟戦争",
+			statWarsText: "同盟イベントで競争",
+			giftTag: "Last Asylum - ギフトコード",
+			giftTitle: "報酬の受け取り方。",
+			giftStep1: "手順 1: ゲームを起動",
+			giftStep2: "手順 2: 左上のプロフィールアイコンをタップ",
+			giftStep3: "手順 3: 設定をタップ",
+			giftStep4: "手順 4: 設定メニューで Gift Code をタップ",
+			giftStep5: "手順 5: コードを入力または貼り付けて OK をタップ",
+			ok: "OK",
+			heroRosterTag: "ヒーロー一覧",
+			heroRosterTitle: "生存を導くヒーローたち。",
+			heroRosterText: "Last Asylum Guide と Lootbar ガイドの情報をもとにした更新済み一覧。前衛タンク、バーストキャリー、PvE/PvP 向けサポートを掲載。最大3体を選んでスキル、効果、ステータスを比較できます。",
+			compareTag: "ヒーロー比較",
+			compareText: "最大3体のヒーローを選び、役割、最大ステータス、全スキルを横並びで比較します。",
+			resetCompare: "比較をリセット",
+			maxSkillStats: "最大スキルステータス",
+			skills: "スキル",
+			compareHeroes: "ヒーローを比較",
+			buildTeam: "チーム編成!",
+			eventsTag: "ライブ活動",
+			eventsTitle: "Last Asylum: Plague の主要イベントと活動。",
+			eventsText: "公式ストア情報と詳しいコミュニティガイドから集めた実イベントと活動を、カテゴリ分けせずにまとめています。",
+			buildingsTag: "建築プランナー",
+			buildingsTitle: "各建築に必要な資源を計算。",
+			buildingsText: "Last Asylum Guide の建築計算データを使ったコンパクトなフォーム。建物、現在レベル、目標レベルを選ぶと必要 RSS が表示されます。",
+			building: "建物",
+			currentLevel: "現在レベル",
+			targetLevel: "目標レベル",
+			wood: "木材",
+			grain: "穀物",
+			herbs: "薬草",
+			time: "時間",
+			steps: "段階",
+			buildingInitialNote: "建物を選択するとコストが表示されます。",
+			rights: "Last Asylum Plague. All rights reserved.",
+			details: "詳細を開く",
+			selected: "選択中",
+			compare: "比較",
+			cardHint: "詳細を開く、または比較に追加",
+			slot: "スロット",
+			emptySlot: "空きスロット",
+			noHeroSelected: "ヒーロー未選択です。カードの比較ボタンで全スキルを横並び表示できます。",
+			faction: "陣営",
+			classLabel: "クラス",
+			rarity: "レアリティ",
+			overview: "概要",
+			source: "出典",
+			type: "タイプ",
+			cooldown: "クールダウン",
+			damage: "ダメージ",
+			additionalEffects: "追加効果",
+			skillSlot: "スキル枠",
+			noSkill: "スキルなし",
+			heroFaction: "ヒーロー陣営",
+			level: "レベル",
+			partialData: "{building} のデータは一部のみです。この範囲の全段階をソースが網羅していないため、表示資源は利用可能なレベルのみの合計です。",
+			buildingNote: "{building}: レベル {current} から {target}。データ元: lastasylumguide.com/calculators/buildings。パッチでデータが変わる可能性があります。",
+			eventSource: "出典: {source}",
+			openEvent: "{name} を全画面で開く"
+		}
+	};
+
+	function normalizeLanguage(language) {
+		var shortCode = String(language || "").slice(0, 2).toLowerCase();
+		return supportedLanguages.indexOf(shortCode) !== -1 ? shortCode : fallbackLanguage;
+	}
+
+	function getCurrentLanguage() {
+		return normalizeLanguage(localStorage.getItem(storageKey) || document.documentElement.lang || navigator.language);
+	}
+
+	function translate(key, params) {
+		var language = getCurrentLanguage();
+		var value = (translations[language] && translations[language][key]) || translations[fallbackLanguage][key] || key;
+
+		if (params) {
+			Object.keys(params).forEach(function (name) {
+				value = value.replace(new RegExp("\\{" + name + "\\}", "g"), params[name]);
+			});
+		}
+
+		return value;
+	}
+
+	function getLocalizedField(item, field) {
+		var language = getCurrentLanguage();
+
+		if (item && item.i18n && item.i18n[language] && item.i18n[language][field]) {
+			return item.i18n[language][field];
+		}
+
+		return item ? item[field] : "";
+	}
+
+	function applyTranslations() {
+		var language = getCurrentLanguage();
+		var metaDescription = document.querySelector('meta[name="description"]');
+
+		document.documentElement.lang = language;
+		document.title = translate("pageTitle");
+
+		if (metaDescription) {
+			metaDescription.setAttribute("content", translate("metaDescription"));
+		}
+
+		document.querySelectorAll("[data-i18n]").forEach(function (node) {
+			node.textContent = translate(node.getAttribute("data-i18n"));
+		});
+
+		document.querySelectorAll("[data-i18n-label]").forEach(function (node) {
+			node.setAttribute("aria-label", translate(node.getAttribute("data-i18n-label")));
+		});
+
+		document.querySelectorAll("[data-language-option]").forEach(function (node) {
+			var isActive = node.getAttribute("data-language-option") === language;
+			node.classList.toggle("is-active", isActive);
+			node.setAttribute("aria-pressed", isActive ? "true" : "false");
+		});
+	}
+
+	function setLanguage(language) {
+		var normalized = normalizeLanguage(language);
+		localStorage.setItem(storageKey, normalized);
+		applyTranslations();
+		window.dispatchEvent(new CustomEvent("last-asylum-language-change", { detail: { language: normalized } }));
+	}
+
+	function initLanguageControls() {
+		document.querySelectorAll("[data-language-option]").forEach(function (node) {
+			node.addEventListener("click", function () {
+				setLanguage(node.getAttribute("data-language-option"));
+			});
+		});
+
+		applyTranslations();
+	}
+
+	window.LastAsylumI18n = {
+		apply: applyTranslations,
+		current: getCurrentLanguage,
+		field: getLocalizedField,
+		set: setLanguage,
+		supported: supportedLanguages.slice(),
+		t: translate
+	};
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", initLanguageControls);
+	} else {
+		initLanguageControls();
+	}
+})();

@@ -1,0 +1,25 @@
+{
+	"name": "Last Asylum: Plague Fan Web App",
+	"short_name": "Last Asylum",
+	"description": "Fan web app installabile con guide, roster hero, eventi e calcolatore building per Last Asylum: Plague.",
+	"id": "./index.html",
+	"start_url": "./index.html",
+	"scope": "./",
+	"display": "standalone",
+	"orientation": "portrait-primary",
+	"background_color": "#090d10",
+	"theme_color": "#090d10",
+	"lang": "it-IT",
+	"icons": [
+		{
+			"src": "assets/pwa/icon-192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "assets/pwa/icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
