@@ -423,11 +423,35 @@
 		window.dispatchEvent(new CustomEvent("last-asylum-language-change", { detail: { language: normalized } }));
 	}
 
+	function ensureMobileLanguageSwitcher() {
+		var mobileNav = document.querySelector("#navPanel nav");
+
+		if (!mobileNav || mobileNav.querySelector(".language-switcher-mobile")) {
+			return;
+		}
+
+		mobileNav.insertAdjacentHTML("beforeend", [
+			'<div class="language-switcher-mobile" aria-label="Language selector">',
+				'<button type="button" data-language-option="en">EN</button>',
+				'<button type="button" data-language-option="it">IT</button>',
+				'<button type="button" data-language-option="es">ES</button>',
+				'<button type="button" data-language-option="ja">JA</button>',
+			'</div>'
+		].join(""));
+	}
+
 	function initLanguageControls() {
-		document.querySelectorAll("[data-language-option]").forEach(function (node) {
-			node.addEventListener("click", function () {
-				setLanguage(node.getAttribute("data-language-option"));
-			});
+		ensureMobileLanguageSwitcher();
+
+		document.addEventListener("click", function (event) {
+			var trigger = event.target.closest("[data-language-option]");
+
+			if (!trigger) {
+				return;
+			}
+
+			event.preventDefault();
+			setLanguage(trigger.getAttribute("data-language-option"));
 		});
 
 		applyTranslations();
