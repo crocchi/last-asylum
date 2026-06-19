@@ -866,6 +866,74 @@
 		}
 	};
 
+	var heroSummaryTranslationsFrDe = {
+		arthur: {
+			fr: "Tank central pour les premieres equipes: ouvre avec des boucliers, tient bien le mid game et reste une frontline fiable quand le roster s'agrandit.",
+			de: "Kern-Tank fuer fruehe Teams: startet mit Schilden, haelt das Mid Game gut und bleibt eine verlaessliche Frontline, wenn dein Roster waechst."
+		},
+		cynthia: {
+			fr: "Carry tres mobile avec bonus critique, pression AoE et tres bon rendement contre les vagues, le farm de ressources et les combats ouverts.",
+			de: "Mobiler Carry mit Bonus-Krit, AoE-Druck und starker Leistung gegen Wellen, Ressourcen-Farming und offene Kaempfe."
+		},
+		marlena: {
+			fr: "L'un des meilleurs carries energie: burst AoE, buffs d'attaque personnels et excellent rendement contre les boss et les compos PvP burst.",
+			de: "Einer der staerksten Energie-Carries: AoE-Burst, Angriffs-Self-Buffs und starke Leistung gegen Bosse und Burst-PvP-Comps."
+		},
+		daskal: {
+			fr: "Tank frontline dominant avec bouclier d'equipe, reduction des degats initiaux et sustain stable contre les compos agressives.",
+			de: "Dominanter Frontline-Tank mit Team-Schilden, frueher Schadensreduktion und stabilem Sustain gegen aggressive Comps."
+		},
+		shadow: {
+			fr: "Frontline polyvalente avec gros degats physiques, debuffs de zone, reduction de defense et mitigation des degats energie.",
+			de: "Vielseitige Frontline mit hohem physischen Schaden, Flaechen-Debuffs, Verteidigungsreduktion und Energy-Damage-Mitigation."
+		},
+		nicole: {
+			fr: "Support warlock axe sur les soins et buffs d'equipe, avec une forte synergie dans les teams burn et vitesse d'attaque.",
+			de: "Warlock-Support mit Fokus auf Heilung und Team-Buffs, stark in Teams rund um Burn und Angriffsgeschwindigkeit."
+		},
+		annie: {
+			fr: "Carry warlock basee sur le burn et les degats energie explosifs, avec une forte pression sur les cibles a haut ATK.",
+			de: "Warlock-Carry rund um Burn und explosiven Energieschaden, mit starkem Druck auf Ziele mit hohem ATK."
+		},
+		jester: {
+			fr: "Carry warlock oriente execution des cibles a faible vie, avec gros burst mono-cible et bonne synergie critique.",
+			de: "Warlock-Carry fuer das Ausfuehren von Low-HP-Zielen, mit starkem Single-Target-Burst und Crit-Synergie."
+		},
+		"red-lady": {
+			fr: "Carry ranger qui cible les ennemis a haut ATK avec burst energie, stun et amplification des degats recus.",
+			de: "Ranger-Carry, der Gegner mit hohem ATK durch Energie-Burst, Stun und erhoehten eingehenden Schaden fokussiert."
+		},
+		billy: {
+			fr: "Tank warlock qui protege les carries avec immunite aux stuns, reduction des degats et utilite defensive en frontline.",
+			de: "Warlock-Tank, der Carries mit Stun-Immunitaet, Schadensreduktion und defensiver Frontline-Utility schuetzt."
+		},
+		zoya: {
+			fr: "Carry warrior avec rafales multi-cibles et forte amplification des degats energie dans les combats longs.",
+			de: "Warrior-Carry mit Multi-Target-Salven und starker Energy-Damage-Verstaerkung in laengeren Kaempfen."
+		},
+		bell: {
+			fr: "Support ranger qui buffe l'ATK, soigne les allies fragiles et augmente la valeur des equipes a degats physiques.",
+			de: "Ranger-Support, der ATK bufft, fragile Verbuendete heilt und physische Damage-Teams staerker macht."
+		},
+		harper: {
+			fr: "Support warrior qui augmente l'ATK de l'equipe et protege les cibles vulnerables avec des buffs defensifs reactifs.",
+			de: "Warrior-Support, der Team-ATK erhoeht und verwundbare Ziele mit reaktiven Defensiv-Buffs schuetzt."
+		},
+		brian: {
+			fr: "Tank warlock tres solide qui renvoie les degats, reduit les degats subis par l'equipe et tient les combats longs.",
+			de: "Sehr robuster Warlock-Tank, der Schaden reflektiert, Teamschaden reduziert und lange Kaempfe halten kann."
+		},
+		louis: {
+			fr: "Tank ranger specialise en reduction des degats, survie extreme et couverture defensive de zone pour l'equipe.",
+			de: "Ranger-Tank spezialisiert auf Schadensreduktion, extreme Ueberlebensfaehigkeit und defensive Flaechenabdeckung fuers Team."
+		}
+	};
+
+	Object.keys(heroSummaryTranslationsFrDe).forEach(function (slug) {
+		heroSummaryTranslations[slug].fr = heroSummaryTranslationsFrDe[slug].fr;
+		heroSummaryTranslations[slug].de = heroSummaryTranslationsFrDe[slug].de;
+	});
+
 	window.LAST_ASYLUM_HEROES.forEach(function (hero) {
 		var translations = heroSummaryTranslations[hero.slug];
 
@@ -877,6 +945,8 @@
 			en: { summary: translations.en },
 			it: { summary: hero.summary },
 			es: { summary: translations.es },
+			fr: { summary: translations.fr },
+			de: { summary: translations.de },
 			ja: { summary: translations.ja }
 		};
 	});

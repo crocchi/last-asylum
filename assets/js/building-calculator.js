@@ -5,6 +5,8 @@
 			en: "en-US",
 			it: "it-IT",
 			es: "es-ES",
+			fr: "fr-FR",
+			de: "de-DE",
 			ja: "ja-JP"
 		};
 

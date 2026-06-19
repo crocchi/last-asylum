@@ -21,6 +21,14 @@
 					summary: "Evento Alliance vs Alliance de tres lineas: captura banderas, gestiona combates en relevo y equilibra la distribucion del equipo con el control de carriles.",
 					extraSummary: "El modal muestra referencias visuales del evento y una descripcion mas amplia del flujo: gestion de tres lineas, control de banderas, rotaciones en relevo y equilibrio entre presion ofensiva y cobertura defensiva."
 				},
+				fr: {
+					summary: "Evenement Alliance vs Alliance a trois voies: capture de drapeaux, combats en relais et equilibre entre repartition des equipes et controle des lanes.",
+					extraSummary: "Le modal montre les references visuelles de l'evenement et une description plus complete du flow: gestion des trois lanes, controle des drapeaux, rotations en relais et importance de l'equilibre entre pression offensive et couverture defensive."
+				},
+				de: {
+					summary: "Dreispuriges Allianz-gegen-Allianz-Event: Flaggen erobern, Relay-Kaempfe steuern und Teamverteilung mit Lane-Kontrolle ausbalancieren.",
+					extraSummary: "Das Modal zeigt visuelle Referenzen des Events und eine erweiterte Beschreibung des Ablaufs: Drei-Lane-Management, Flaggenkontrolle, Relay-Rotationen und die Balance zwischen offensivem Druck und defensiver Abdeckung."
+				},
 				ja: {
 					summary: "3レーン制の同盟対同盟イベント。旗を奪取し、リレー戦を管理し、チーム配分とレーン支配が重要です。",
 					extraSummary: "モーダルではイベント画像と詳しい流れを表示します。3レーン管理、旗の支配、リレー交代、攻撃圧と防衛カバーのバランスが鍵です。"
@@ -49,6 +57,14 @@
 				es: {
 					summary: "Evento Alliance vs Alliance de tres lineas: captura banderas, gestiona combates en relevo y equilibra la distribucion del equipo con el control de carriles.",
 					extraSummary: "El modal muestra referencias visuales del evento y una descripcion mas amplia del flujo: gestion de tres lineas, control de banderas, rotaciones en relevo y equilibrio entre presion ofensiva y cobertura defensiva."
+				},
+				fr: {
+					summary: "Evenement Alliance vs Alliance a trois voies: capture de drapeaux, combats en relais et equilibre entre repartition des equipes et controle des lanes.",
+					extraSummary: "Le modal montre les references visuelles de l'evenement et une description plus complete du flow: gestion des trois lanes, controle des drapeaux, rotations en relais et importance de l'equilibre entre pression offensive et couverture defensive."
+				},
+				de: {
+					summary: "Dreispuriges Allianz-gegen-Allianz-Event: Flaggen erobern, Relay-Kaempfe steuern und Teamverteilung mit Lane-Kontrolle ausbalancieren.",
+					extraSummary: "Das Modal zeigt visuelle Referenzen des Events und eine erweiterte Beschreibung des Ablaufs: Drei-Lane-Management, Flaggenkontrolle, Relay-Rotationen und die Balance zwischen offensivem Druck und defensiver Abdeckung."
 				},
 				ja: {
 					summary: "3レーン制の同盟対同盟イベント。旗を奪取し、リレー戦を管理し、チーム配分とレーン支配が重要です。",

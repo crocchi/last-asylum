@@ -97,7 +97,7 @@ a:hover {
 
 #navPanel .language-switcher-mobile {
 	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 0.45rem;
 	padding: 0.85rem 1.25rem 1.1rem;
 }
