@@ -364,7 +364,7 @@
 	}
 
 	function getCurrentLanguage() {
-		return normalizeLanguage(localStorage.getItem(storageKey) || document.documentElement.lang || navigator.language);
+		return normalizeLanguage(localStorage.getItem(storageKey) || navigator.language || fallbackLanguage);
 	}
 
 	function translate(key, params) {
