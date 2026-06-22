@@ -1,9 +1,8 @@
-const STATIC_CACHE = "lap-static-v5";
-const RUNTIME_CACHE = "lap-runtime-v5";
+const STATIC_CACHE = "lap-static-v6";
+const RUNTIME_CACHE = "lap-runtime-v6";
 const APP_SHELL = [
 	"./",
 	"./index.html",
-	"./tara.php",
 	"./elements.html",
 	"./left-sidebar.html",
 	"./right-sidebar.html",
@@ -106,6 +105,10 @@ self.addEventListener("fetch", function (event) {
 	var url = new URL(request.url);
 
 	if (request.method !== "GET") {
+		return;
+	}
+
+	if (url.pathname.endsWith("/tara.php")) {
 		return;
 	}
 

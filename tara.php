@@ -1,13 +1,21 @@
 <?php
 declare(strict_types=1);
 
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
+
 $storageDir = __DIR__ . '/data';
 $storageFile = $storageDir . '/tara-wall.json';
 $errors = [];
 $success = false;
+$storageReady = true;
 
 if (!is_dir($storageDir)) {
-	mkdir($storageDir, 0755, true);
+	$storageReady = mkdir($storageDir, 0755, true);
+}
+
+if ($storageReady) {
+	$storageReady = is_file($storageFile) ? is_writable($storageFile) : is_writable($storageDir);
 }
 
 function clean_text(string $value, int $maxLength): string
@@ -28,16 +36,33 @@ function load_messages(string $storageFile): array
 	return is_array($messages) ? $messages : [];
 }
 
-function save_messages(string $storageFile, array $messages): bool
+function add_message(string $storageFile, array $message): bool
 {
 	$handle = fopen($storageFile, 'c+');
-	$payload = json_encode($messages, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
-	if (!$handle || $payload === false) {
+	if (!$handle) {
 		return false;
 	}
 
 	flock($handle, LOCK_EX);
+	rewind($handle);
+	$payload = stream_get_contents($handle);
+	$messages = json_decode($payload ?: '[]', true);
+
+	if (!is_array($messages)) {
+		$messages = [];
+	}
+
+	array_unshift($messages, $message);
+	$messages = array_slice($messages, 0, 60);
+	$payload = json_encode($messages, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+	if ($payload === false) {
+		flock($handle, LOCK_UN);
+		fclose($handle);
+		return false;
+	}
+
 	ftruncate($handle, 0);
 	rewind($handle);
 	$result = fwrite($handle, $payload);
@@ -63,6 +88,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$name = clean_text((string) ($_POST['name'] ?? ''), 32);
 	$message = clean_text((string) ($_POST['message'] ?? ''), 280);
 
+	if (!$storageReady) {
+		$errors[] = 'The data folder is not writable. On Aruba, create a data folder next to tara.php and set write permissions on it.';
+	}
+
 	if ($name === '') {
 		$errors[] = 'Enter your commander name.';
 	}
@@ -72,15 +101,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	}
 
 	if (!$errors) {
-		$messages = load_messages($storageFile);
-		array_unshift($messages, [
+		$saved = add_message($storageFile, [
 			'name' => $name,
 			'message' => $message,
 			'created_at' => date(DATE_ATOM),
 		]);
-		$messages = array_slice($messages, 0, 60);
 
-		if (save_messages($storageFile, $messages)) {
+		if ($saved) {
 			header('Location: tara.php?sent=1#wall');
 			exit;
 		}
@@ -176,6 +203,12 @@ $success = isset($_GET['sent']);
 
 				<div class="tara-wall-layout">
 					<form class="tara-wall-form" method="post" action="tara.php#wall">
+						<?php if (!$storageReady) : ?>
+							<div class="tara-alert error">
+								<p>Storage is not writable. On Aruba, create the <strong>data</strong> folder next to <strong>tara.php</strong> and enable write permissions.</p>
+							</div>
+						<?php endif; ?>
+
 						<?php if ($success) : ?>
 							<p class="tara-alert success">Message posted on the TARA wall.</p>
 						<?php endif; ?>

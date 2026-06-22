@@ -1355,6 +1355,7 @@ body.hero-modal-open {
 
 .tara-wall-form input,
 .tara-wall-form textarea {
+	width: 100%;
 	margin-bottom: 1rem;
 	border-radius: 0.8rem;
 	background: rgba(0, 0, 0, 0.16);
@@ -1431,12 +1432,67 @@ body.hero-modal-open {
 }
 
 @media screen and (max-width: 736px) {
+	.tara-page #header {
+		height: 3.25rem;
+		line-height: 3.25rem;
+	}
+
+	.tara-page #logo {
+		font-size: 0.78rem;
+	}
+
 	.tara-hero {
-		min-height: 66vh;
-		padding-top: 6rem;
+		min-height: auto;
+		padding: 5.5rem 1rem 3rem;
+	}
+
+	.tara-logo {
+		width: min(8.5rem, 46vw);
+		margin-bottom: 1rem;
+	}
+
+	.tara-hero .hero-badges {
+		gap: 0.45rem;
+		margin-bottom: 1rem;
+	}
+
+	.tara-hero .hero-badges li {
+		font-size: 0.58rem;
+		padding: 0.3rem 0.62rem;
+	}
+
+	.tara-hero h2 {
+		font-size: clamp(2.45rem, 16vw, 4rem);
+	}
+
+	.tara-hero p {
+		margin-bottom: 1.35rem;
+		font-size: 0.96rem;
+		line-height: 1.55;
+	}
+
+	.tara-hero .actions,
+	.tara-hero .actions li,
+	.tara-wall-form .button {
+		width: 100%;
+	}
+
+	.tara-cards section {
+		padding: 1.35rem 1rem;
+	}
+
+	.tara-wall-form,
+	.tara-message {
+		padding: 1rem;
 	}
 
 	.tara-message-head {
 		display: block;
+	}
+
+	.tara-message time {
+		display: block;
+		margin-top: 0.2rem;
+		white-space: normal;
 	}
 }
