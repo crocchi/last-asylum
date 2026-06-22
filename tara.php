@@ -124,6 +124,7 @@ $success = isset($_GET['sent']);
 
 		<section class="tara-hero">
 			<div class="tara-hero-inner">
+				<img class="tara-logo" src="assets/ally/TAra_logo.png" alt="Logo alleanza TARA" />
 				<ul class="hero-badges">
 					<li>Alliance Hub</li>
 					<li>TARA</li>

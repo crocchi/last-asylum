@@ -34,6 +34,7 @@ const APP_SHELL = [
 	"./assets/pwa/apple-touch-icon.png",
 	"./assets/pwa/icon-192.png",
 	"./assets/pwa/icon-512.png",
+	"./assets/ally/TAra_logo.png",
 	"./assets/webfonts/fa-brands-400.woff",
 	"./assets/webfonts/fa-brands-400.woff2",
 	"./assets/webfonts/fa-regular-400.woff",
