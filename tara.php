@@ -64,11 +64,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$message = clean_text((string) ($_POST['message'] ?? ''), 280);
 
 	if ($name === '') {
-		$errors[] = 'Inserisci il tuo nome.';
+		$errors[] = 'Enter your commander name.';
 	}
 
 	if ($message === '') {
-		$errors[] = 'Scrivi un messaggio per il muro.';
+		$errors[] = 'Write a message for the wall.';
 	}
 
 	if (!$errors) {
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			exit;
 		}
 
-		$errors[] = 'Non riesco a salvare il messaggio. Controlla i permessi della cartella data.';
+		$errors[] = 'The message could not be saved. Check the permissions for the data folder.';
 	}
 }
 
@@ -93,14 +93,14 @@ $messages = load_messages($storageFile);
 $success = isset($_GET['sent']);
 ?>
 <!DOCTYPE HTML>
-<html lang="it">
+<html lang="en">
 
 <head>
-	<title>Alleanza TARA | Last Asylum Fan Website</title>
+	<title>TARA Alliance | Last Asylum Fan Website</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="theme-color" content="#090d10" />
-	<meta name="description" content="Pagina fan dedicata all'alleanza TARA di Last Asylum: Plague, con muro messaggi in PHP." />
+	<meta name="description" content="Fan page dedicated to the TARA alliance in Last Asylum: Plague, with a PHP message wall." />
 	<link rel="manifest" href="manifest.webmanifest" />
 	<link rel="apple-touch-icon" href="assets/pwa/apple-touch-icon.png" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -124,17 +124,17 @@ $success = isset($_GET['sent']);
 
 		<section class="tara-hero">
 			<div class="tara-hero-inner">
-				<img class="tara-logo" src="assets/ally/TAra_logo.png" alt="Logo alleanza TARA" />
+				<img class="tara-logo" src="assets/ally/TAra_logo.png" alt="TARA alliance logo" />
 				<ul class="hero-badges">
 					<li>Alliance Hub</li>
 					<li>TARA</li>
 					<li>Fan Page</li>
 				</ul>
 				<h2>TARA Alliance</h2>
-				<p>Un piccolo avamposto per lasciare saluti, coordinate, promemoria evento e messaggi rapidi per gli alleati.</p>
+				<p>A small outpost for greetings, coordinates, event reminders, and quick notes for alliance members.</p>
 				<ul class="actions">
-					<li><a href="#wall" class="button primary scrolly">Lascia un messaggio</a></li>
-					<li><a href="index.html" class="button secondary">Torna alla base</a></li>
+					<li><a href="#wall" class="button primary scrolly">Leave a Message</a></li>
+					<li><a href="index.html" class="button secondary">Back to Base</a></li>
 				</ul>
 			</div>
 		</section>
@@ -143,24 +143,24 @@ $success = isset($_GET['sent']);
 			<div class="container">
 				<header class="major">
 					<span class="section-tag">Alliance Board</span>
-					<h2>Il punto di ritrovo TARA.</h2>
-					<p>Usalo come bacheca semplice: i messaggi vengono salvati in locale dal PHP e mostrati dal piu recente al piu vecchio.</p>
+					<h2>The TARA meeting point.</h2>
+					<p>Use it as a simple board: messages are saved locally by PHP and shown from newest to oldest.</p>
 				</header>
 				<div class="tara-cards">
 					<section>
 						<span class="icon solid alt major fa-shield-alt"></span>
-						<h3>Difesa</h3>
-						<p>Segnala attacchi, rally e richieste di rinforzo prima che la mappa diventi ingestibile.</p>
+						<h3>Defense</h3>
+						<p>Report attacks, rallies, and reinforcement requests before the map gets out of control.</p>
 					</section>
 					<section>
 						<span class="icon solid alt major fa-users"></span>
-						<h3>Coordinamento</h3>
-						<p>Lascia orari, obiettivi comuni e note rapide per chi entra dopo.</p>
+						<h3>Coordination</h3>
+						<p>Leave schedules, shared objectives, and quick notes for players who join later.</p>
 					</section>
 					<section>
 						<span class="icon solid alt major fa-fire"></span>
-						<h3>Eventi</h3>
-						<p>Tieni traccia di boss, reward e priorita dell'alleanza durante gli eventi live.</p>
+						<h3>Events</h3>
+						<p>Track bosses, rewards, and alliance priorities during live events.</p>
 					</section>
 				</div>
 			</div>
@@ -170,14 +170,14 @@ $success = isset($_GET['sent']);
 			<div class="container">
 				<header>
 					<span class="section-tag">TARA Wall</span>
-					<h2>Muro messaggi alleanza.</h2>
-					<p>Scrivi un messaggio breve. Sono accettati massimo 32 caratteri per il nome e 280 per il testo.</p>
+					<h2>Alliance message wall.</h2>
+					<p>Write a short message. Names can use up to 32 characters and messages up to 280.</p>
 				</header>
 
 				<div class="tara-wall-layout">
 					<form class="tara-wall-form" method="post" action="tara.php#wall">
 						<?php if ($success) : ?>
-							<p class="tara-alert success">Messaggio pubblicato sul muro TARA.</p>
+							<p class="tara-alert success">Message posted on the TARA wall.</p>
 						<?php endif; ?>
 
 						<?php if ($errors) : ?>
@@ -188,27 +188,27 @@ $success = isset($_GET['sent']);
 							</div>
 						<?php endif; ?>
 
-						<label for="name">Nome comandante</label>
-						<input id="name" type="text" name="name" maxlength="32" required placeholder="Es. Cro" value="<?php echo htmlspecialchars((string) ($_POST['name'] ?? ''), ENT_QUOTES, 'UTF-8'); ?>" />
+						<label for="name">Commander Name</label>
+						<input id="name" type="text" name="name" maxlength="32" required placeholder="e.g. Cro" value="<?php echo htmlspecialchars((string) ($_POST['name'] ?? ''), ENT_QUOTES, 'UTF-8'); ?>" />
 
-						<label for="message">Messaggio</label>
-						<textarea id="message" name="message" maxlength="280" rows="5" required placeholder="Scrivi qui il tuo messaggio per TARA..."><?php echo htmlspecialchars((string) ($_POST['message'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></textarea>
+						<label for="message">Message</label>
+						<textarea id="message" name="message" maxlength="280" rows="5" required placeholder="Write your message for TARA here..."><?php echo htmlspecialchars((string) ($_POST['message'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></textarea>
 
-						<button class="button primary fit" type="submit">Pubblica</button>
+						<button class="button primary fit" type="submit">Publish</button>
 					</form>
 
 					<div class="tara-message-list" aria-live="polite">
 						<?php if (!$messages) : ?>
 							<article class="tara-message empty">
-								<h3>Nessun messaggio ancora.</h3>
-								<p>Il primo messaggio sul muro TARA puo essere il tuo.</p>
+								<h3>No messages yet.</h3>
+								<p>The first message on the TARA wall can be yours.</p>
 							</article>
 						<?php endif; ?>
 
 						<?php foreach ($messages as $message) : ?>
 							<article class="tara-message">
 								<div class="tara-message-head">
-									<h3><?php echo htmlspecialchars((string) ($message['name'] ?? 'Comandante'), ENT_QUOTES, 'UTF-8'); ?></h3>
+									<h3><?php echo htmlspecialchars((string) ($message['name'] ?? 'Commander'), ENT_QUOTES, 'UTF-8'); ?></h3>
 									<time datetime="<?php echo htmlspecialchars((string) ($message['created_at'] ?? ''), ENT_QUOTES, 'UTF-8'); ?>">
 										<?php echo htmlspecialchars(format_message_date((string) ($message['created_at'] ?? 'now')), ENT_QUOTES, 'UTF-8'); ?>
 									</time>
