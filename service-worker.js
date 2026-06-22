@@ -3,6 +3,7 @@ const RUNTIME_CACHE = "lap-runtime-v5";
 const APP_SHELL = [
 	"./",
 	"./index.html",
+	"./tara.php",
 	"./elements.html",
 	"./left-sidebar.html",
 	"./right-sidebar.html",
@@ -10,6 +11,7 @@ const APP_SHELL = [
 	"./LICENSE.txt",
 	"./manifest.webmanifest",
 	"./assets/css/main.css",
+	"./assets/css/index-custom.css",
 	"./assets/css/noscript.css",
 	"./assets/css/fontawesome-all.min.css",
 	"./assets/css/images/arrow.svg",

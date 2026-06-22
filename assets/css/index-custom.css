@@ -1237,3 +1237,198 @@ body.hero-modal-open {
 .content header {
 	padding-bottom: 20px;
 }
+
+.tara-page {
+	background:
+		radial-gradient(circle at 20% 12%, rgba(143, 191, 38, 0.22), transparent 24rem),
+		radial-gradient(circle at 78% 8%, rgba(217, 93, 57, 0.18), transparent 28rem),
+		linear-gradient(180deg, #080d10 0%, #0b1115 52%, #090d10 100%);
+}
+
+.tara-hero {
+	min-height: 78vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8rem 1.5rem 5rem;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+.tara-hero:before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(135deg, rgba(8, 15, 19, 0.46), rgba(8, 15, 19, 0.84)),
+		url("../../images/banner.jpg") center/cover;
+	opacity: 0.72;
+}
+
+.tara-hero:after {
+	content: "";
+	position: absolute;
+	inset: auto 0 0;
+	height: 12rem;
+	background: linear-gradient(180deg, transparent, rgba(8, 15, 19, 0.98));
+}
+
+.tara-hero-inner {
+	position: relative;
+	z-index: 1;
+	width: min(56rem, 100%);
+}
+
+.tara-hero .hero-badges {
+	justify-content: center;
+}
+
+.tara-hero h2 {
+	margin: 0 0 0.35em;
+	font-size: clamp(3rem, 9vw, 7rem);
+	line-height: 0.9;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.tara-hero p {
+	width: min(42rem, 100%);
+	margin: 0 auto 2rem;
+	color: rgba(255, 255, 255, 0.84);
+	font-size: 1.12rem;
+}
+
+.tara-hero .actions {
+	justify-content: center;
+}
+
+.tara-cards {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.tara-cards section,
+.tara-wall-form,
+.tara-message {
+	border: 1px solid rgba(255, 255, 255, 0.09);
+	border-radius: 1rem;
+	background: rgba(255, 255, 255, 0.045);
+}
+
+.tara-cards section {
+	padding: 2rem 1.35rem;
+}
+
+.tara-wall-layout {
+	display: grid;
+	grid-template-columns: minmax(18rem, 0.86fr) minmax(0, 1.14fr);
+	gap: 1.25rem;
+	align-items: start;
+	text-align: left;
+}
+
+.tara-wall-form {
+	padding: 1.5rem;
+	position: sticky;
+	top: 5rem;
+}
+
+.tara-wall-form label {
+	display: block;
+	margin: 0 0 0.55rem;
+	color: rgba(255, 255, 255, 0.76);
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.tara-wall-form input,
+.tara-wall-form textarea {
+	margin-bottom: 1rem;
+	border-radius: 0.8rem;
+	background: rgba(0, 0, 0, 0.16);
+}
+
+.tara-alert {
+	margin: 0 0 1rem;
+	padding: 0.85rem 1rem;
+	border-radius: 0.8rem;
+	font-size: 0.88rem;
+	line-height: 1.5;
+}
+
+.tara-alert p {
+	margin: 0;
+}
+
+.tara-alert.success {
+	border: 1px solid rgba(143, 191, 38, 0.4);
+	background: rgba(143, 191, 38, 0.14);
+}
+
+.tara-alert.error {
+	border: 1px solid rgba(217, 93, 57, 0.45);
+	background: rgba(217, 93, 57, 0.14);
+}
+
+.tara-message-list {
+	display: grid;
+	gap: 0.9rem;
+}
+
+.tara-message {
+	padding: 1.15rem 1.25rem;
+}
+
+.tara-message.empty {
+	text-align: center;
+}
+
+.tara-message-head {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 0.55rem;
+}
+
+.tara-message h3 {
+	margin: 0;
+	font-size: 1.05rem;
+}
+
+.tara-message time {
+	color: rgba(255, 255, 255, 0.52);
+	font-size: 0.76rem;
+	white-space: nowrap;
+}
+
+.tara-message p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.8);
+	line-height: 1.65;
+}
+
+@media screen and (max-width: 980px) {
+	.tara-cards,
+	.tara-wall-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.tara-wall-form {
+		position: static;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.tara-hero {
+		min-height: 66vh;
+		padding-top: 6rem;
+	}
+
+	.tara-message-head {
+		display: block;
+	}
+}
