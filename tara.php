@@ -1,12 +1,13 @@
 <?php
-declare(strict_types=1);
 
 header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
 header('Pragma: no-cache');
 
-$storageDir = __DIR__ . '/data';
+date_default_timezone_set('Europe/Rome');
+
+$storageDir = dirname(__FILE__) . '/data';
 $storageFile = $storageDir . '/tara-wall.json';
-$errors = [];
+$errors = array();
 $success = false;
 $storageReady = true;
 
@@ -18,25 +19,36 @@ if ($storageReady) {
 	$storageReady = is_file($storageFile) ? is_writable($storageFile) : is_writable($storageDir);
 }
 
-function clean_text(string $value, int $maxLength): string
+function post_value($key)
 {
-	$value = trim(preg_replace('/\s+/', ' ', $value) ?? '');
+	return isset($_POST[$key]) ? (string) $_POST[$key] : '';
+}
+
+function message_value($message, $key, $fallback)
+{
+	return isset($message[$key]) ? (string) $message[$key] : $fallback;
+}
+
+function clean_text($value, $maxLength)
+{
+	$cleaned = preg_replace('/\s+/', ' ', $value);
+	$value = trim($cleaned !== null ? $cleaned : '');
 	return function_exists('mb_substr') ? mb_substr($value, 0, $maxLength) : substr($value, 0, $maxLength);
 }
 
-function load_messages(string $storageFile): array
+function load_messages($storageFile)
 {
 	if (!is_file($storageFile)) {
-		return [];
+		return array();
 	}
 
 	$payload = file_get_contents($storageFile);
-	$messages = json_decode($payload ?: '[]', true);
+	$messages = json_decode($payload ? $payload : '[]', true);
 
-	return is_array($messages) ? $messages : [];
+	return is_array($messages) ? $messages : array();
 }
 
-function add_message(string $storageFile, array $message): bool
+function add_message($storageFile, $message)
 {
 	$handle = fopen($storageFile, 'c+');
 
@@ -47,15 +59,15 @@ function add_message(string $storageFile, array $message): bool
 	flock($handle, LOCK_EX);
 	rewind($handle);
 	$payload = stream_get_contents($handle);
-	$messages = json_decode($payload ?: '[]', true);
+	$messages = json_decode($payload ? $payload : '[]', true);
 
 	if (!is_array($messages)) {
-		$messages = [];
+		$messages = array();
 	}
 
 	array_unshift($messages, $message);
 	$messages = array_slice($messages, 0, 60);
-	$payload = json_encode($messages, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+	$payload = json_encode($messages);
 
 	if ($payload === false) {
 		flock($handle, LOCK_UN);
@@ -73,7 +85,7 @@ function add_message(string $storageFile, array $message): bool
 	return $result !== false;
 }
 
-function format_message_date(string $value): string
+function format_message_date($value)
 {
 	$timestamp = strtotime($value);
 
@@ -85,8 +97,8 @@ function format_message_date(string $value): string
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	$name = clean_text((string) ($_POST['name'] ?? ''), 32);
-	$message = clean_text((string) ($_POST['message'] ?? ''), 280);
+	$name = clean_text(post_value('name'), 32);
+	$message = clean_text(post_value('message'), 280);
 
 	if (!$storageReady) {
 		$errors[] = 'The data folder is not writable. On Aruba, create a data folder next to tara.php and set write permissions on it.';
@@ -101,11 +113,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	}
 
 	if (!$errors) {
-		$saved = add_message($storageFile, [
+		$saved = add_message($storageFile, array(
 			'name' => $name,
 			'message' => $message,
 			'created_at' => date(DATE_ATOM),
-		]);
+		));
 
 		if ($saved) {
 			header('Location: tara.php?sent=1#wall');
@@ -222,10 +234,10 @@ $success = isset($_GET['sent']);
 						<?php endif; ?>
 
 						<label for="name">Commander Name</label>
-						<input id="name" type="text" name="name" maxlength="32" required placeholder="e.g. Cro" value="<?php echo htmlspecialchars((string) ($_POST['name'] ?? ''), ENT_QUOTES, 'UTF-8'); ?>" />
+						<input id="name" type="text" name="name" maxlength="32" required placeholder="e.g. Cro" value="<?php echo htmlspecialchars(post_value('name'), ENT_QUOTES, 'UTF-8'); ?>" />
 
 						<label for="message">Message</label>
-						<textarea id="message" name="message" maxlength="280" rows="5" required placeholder="Write your message for TARA here..."><?php echo htmlspecialchars((string) ($_POST['message'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></textarea>
+						<textarea id="message" name="message" maxlength="280" rows="5" required placeholder="Write your message for TARA here..."><?php echo htmlspecialchars(post_value('message'), ENT_QUOTES, 'UTF-8'); ?></textarea>
 
 						<button class="button primary fit" type="submit">Publish</button>
 					</form>
@@ -241,12 +253,12 @@ $success = isset($_GET['sent']);
 						<?php foreach ($messages as $message) : ?>
 							<article class="tara-message">
 								<div class="tara-message-head">
-									<h3><?php echo htmlspecialchars((string) ($message['name'] ?? 'Commander'), ENT_QUOTES, 'UTF-8'); ?></h3>
-									<time datetime="<?php echo htmlspecialchars((string) ($message['created_at'] ?? ''), ENT_QUOTES, 'UTF-8'); ?>">
-										<?php echo htmlspecialchars(format_message_date((string) ($message['created_at'] ?? 'now')), ENT_QUOTES, 'UTF-8'); ?>
+									<h3><?php echo htmlspecialchars(message_value($message, 'name', 'Commander'), ENT_QUOTES, 'UTF-8'); ?></h3>
+									<time datetime="<?php echo htmlspecialchars(message_value($message, 'created_at', ''), ENT_QUOTES, 'UTF-8'); ?>">
+										<?php echo htmlspecialchars(format_message_date(message_value($message, 'created_at', 'now')), ENT_QUOTES, 'UTF-8'); ?>
 									</time>
 								</div>
-								<p><?php echo nl2br(htmlspecialchars((string) ($message['message'] ?? ''), ENT_QUOTES, 'UTF-8')); ?></p>
+								<p><?php echo nl2br(htmlspecialchars(message_value($message, 'message', ''), ENT_QUOTES, 'UTF-8')); ?></p>
 							</article>
 						<?php endforeach; ?>
 					</div>
