@@ -152,6 +152,20 @@ input[type="submit"].primary:hover {
 	max-width: 34rem;
 }
 
+.hero-content-image {
+	display: inline-block;
+	margin: 0 2em;
+	vertical-align: middle;
+}
+
+.hero-content-image img {
+	display: block;
+	width: min(14rem, 32vw);
+	height: auto;
+	border-radius: 1.2em;
+	box-shadow: 0 1.25em 3em rgba(0, 0, 0, 0.34);
+}
+
 .hero-badges,
 .feature-list,
 .platform-list {
@@ -185,6 +199,18 @@ input[type="submit"].primary:hover {
 	border-radius: 1.5em;
 	padding: 1.5em;
 	box-shadow: 0 1.5em 4em rgba(0, 0, 0, 0.32);
+}
+
+@media screen and (max-width: 980px) {
+	.hero-content-image {
+		display: block;
+		margin: 0 auto 2em;
+	}
+
+	.hero-content-image img {
+		margin: 0 auto;
+		width: min(12rem, 55vw);
+	}
 }
 
 .hero-panel .label {
