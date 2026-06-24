@@ -250,6 +250,43 @@ input[type="submit"].primary:hover {
 	background: rgba(5, 7, 6, 0.68);
 }
 
+.back-to-top {
+	position: fixed;
+	right: 1.2rem;
+	bottom: 1.2rem;
+	z-index: 10000;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.2rem;
+	height: 3.2rem;
+	border: 1px solid var(--lap-border);
+	border-radius: 999px;
+	overflow: hidden;
+	background: rgba(5, 7, 6, 0.82);
+	box-shadow: 0 0.85rem 2rem rgba(0, 0, 0, 0.38);
+	color: var(--lap-paper);
+	text-decoration: none;
+	backdrop-filter: blur(10px);
+	transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+	border-color: rgba(182, 190, 118, 0.58);
+	background: rgba(127, 139, 58, 0.28);
+	color: #ffffff !important;
+	transform: translateY(-0.12rem);
+	outline: none;
+}
+
+.back-to-top img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 .hero-badges,
 .feature-list,
 .platform-list {
