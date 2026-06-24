@@ -320,7 +320,6 @@ input[type="submit"].primary:hover {
 .feature-list li {
 	position: relative;
 	padding-left: 1.4em;
-	margin-bottom: 0.8em;
 }
 
 .feature-list li:before {
