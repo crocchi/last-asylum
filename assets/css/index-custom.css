@@ -201,6 +201,55 @@ input[type="submit"].primary:hover {
 	min-width: 0;
 }
 
+.quick-links {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 8.5rem));
+	gap: 1rem;
+	justify-content: flex-start;
+	margin-top: 1.4rem;
+}
+
+.quick-link-card {
+	display: grid;
+	gap: 0.65rem;
+	align-content: start;
+	padding: 0.75rem;
+	border: 1px solid var(--lap-border);
+	border-radius: 0.9rem;
+	background: rgba(10, 13, 10, 0.76);
+	box-shadow: 0 1em 2.5em rgba(0, 0, 0, 0.32);
+	text-align: center;
+	text-decoration: none;
+	transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quick-link-card:hover,
+.quick-link-card:focus-visible {
+	border-color: rgba(182, 190, 118, 0.5);
+	box-shadow: 0 1.25em 2.8em rgba(0, 0, 0, 0.42);
+	transform: translateY(-0.12rem);
+	outline: none;
+}
+
+.quick-link-card span {
+	color: var(--lap-paper);
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.quick-link-card img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1;
+	object-fit: cover;
+	border-radius: 999px;
+	border: 1px solid rgba(182, 190, 118, 0.22);
+	background: rgba(5, 7, 6, 0.68);
+}
+
 .hero-badges,
 .feature-list,
 .platform-list {
@@ -256,6 +305,11 @@ input[type="submit"].primary:hover {
 	#banner .content header p {
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.quick-links {
+		grid-template-columns: repeat(3, minmax(0, 7rem));
+		justify-content: center;
 	}
 
 	.hero-content-image {
