@@ -358,23 +358,24 @@ input[type="submit"].primary:hover {
 	margin-top: 2.5em;
 }
 
-.help-card {
+.picture-card {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: min(11rem, 45vw);
 	margin: 0 auto 2em;
 	padding: 0.75rem;
-	border: 1px solid var(--lap-border);
 	border-radius: 0.9rem;
-	background: rgba(10, 13, 10, 0.72);
-	box-shadow: 0 1em 2.5em rgba(0, 0, 0, 0.32);
 }
 
-.help-card img {
+.picture-card img {
 	display: block;
 	width: 100%;
 	height: auto;
+}
+
+.building-card {
+	width: min(10rem, 42vw);
 }
 
 .hero-card {
