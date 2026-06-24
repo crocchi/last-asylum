@@ -374,7 +374,9 @@ input[type="submit"].primary:hover {
 	height: auto;
 }
 
-.building-card {
+.building-card,
+.hero-roster-card,
+.hero-picture-card {
 	width: min(10rem, 42vw);
 }
 
