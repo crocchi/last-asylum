@@ -6,9 +6,7 @@
 			tag: "Alliance weekly PvP",
 			image: "images/alliance.png",
 			detailImages: [
-				"images/alliance.png",
-				"images/events.png",
-				"images/card1.jpg"
+				"images/alliance.png"
 			],
 			summary: "Duello settimanale tra alleanze: sei giorni di fasi tematiche dove ogni azione giusta al momento giusto porta punti all'alleanza.",
 			extraSummary: "Alliance Duel e l'evento cardine per coordinare crescita, risorse e combattimento. Le alleanze migliori preparano speed-up, shard, upgrade e missioni prima dell'inizio, poi li usano nella fase corretta per massimizzare punti giornalieri e totale settimanale.",
@@ -50,11 +48,9 @@
 			slug: "hunt-battle",
 			name: "Hunt Battle",
 			tag: "Alliance PvE",
-			image: "images/elixirscra.png",
+			image: "images/huntbattle.png",
 			detailImages: [
-				"images/elixirscra.png",
 				"images/huntbattle.png",
-				"images/event_cheeseTrap_post.png"
 			],
 			summary: "Evento PvE di alleanza a ondate: i membri devono eliminare nemici Blight in territorio alleanza e mantenere ritmo costante di marce.",
 			extraSummary: "Hunt Battle premia coordinazione e presenza. Dopo una breve preparazione, l'alleanza affronta 15 ondate crescenti: piu nemici vengono abbattuti, migliori diventano punteggio e ricompense.",
@@ -98,11 +94,9 @@
 			slug: "crystal-cluster-valley",
 			name: "Crystal Cluster Valley",
 			tag: "Individual PvP",
-			image: "images/event_canyon_post2.png",
+			image: "images/crystal.png",
 			detailImages: [
-				"images/event_canyon_post2.png",
-				"images/event_canyon_1.png",
-				"images/event_canyon_2.png"
+				"images/crystal.png"
 			],
 			summary: "Evento individuale da 30 minuti: raccogli cristalli, elimina mob e usa bene i teleport per salire in classifica.",
 			extraSummary: "Crystal Cluster Valley e una gara rapida di raccolta punti. La mappa contiene cluster di cristalli di vari livelli e nemici che danno punti; negli ultimi minuti il centro diventa piu conteso.",
@@ -141,6 +135,7 @@
 			overview: ["30 minuti", "Teleport", "Ranking"],
 			source: "Riepilogo Esecutivo.pdf"
 		},
+		/*
 		{
 			slug: "easter-2026",
 			name: "Easter Event 2026",
@@ -253,36 +248,7 @@
 			overview: ["Parziale", "Raven/Eroi", "PvE"],
 			source: "Riepilogo Esecutivo.pdf"
 		},
-		{
-			slug: "canyon-conquest",
-			name: "Canyon Conquest",
-			tag: "Alliance PvP",
-			image: "images/event_canyon_post.png",
-			detailImages: [
-				"images/event_canyon_1.png",
-				"images/event_canyon_2.png",
-				"images/event_canyon_3.png"
-			],
-			summary: "Evento Alliance vs Alliance a tre lane: si conquistano bandiere, si gestiscono i fight in relay e conta sia la distribuzione dei team sia il controllo delle corsie.",
-			extraSummary: "Nel modal vengono mostrate le reference visuali dell'evento e una descrizione piu estesa del flow: gestione delle tre lane, controllo bandiere, rotazioni relay e importanza del bilanciamento tra pressione offensiva e copertura difensiva.",
-			overview: ["3 Lanes", "Flags", "Strategy"],
-			source: "Community infographic"
-		},
-		{
-			slug: "cheese-conquest",
-			name: "Cheese Conquest",
-			tag: "Alliance PvP",
-			image: "images/huntbattle.png",
-			detailImages: [
-				"images/event_cheeseTrap_post.png",
-				"images/huntbattle.png",
-				"images/cheese_trap.png"
-			],
-			summary: "Evento Alliance vs Alliance a tre lane: si conquistano bandiere, si gestiscono i fight in relay e conta sia la distribuzione dei team sia il controllo delle corsie.",
-			extraSummary: "Nel modal vengono mostrate le reference visuali dell'evento e una descrizione piu estesa del flow: gestione delle tre lane, controllo bandiere, rotazioni relay e importanza del bilanciamento tra pressione offensiva e copertura difensiva.",
-			overview: ["3 Lanes", "Flags", "Strategy"],
-			source: "Community infographic"
-		},
+		
 		{
 			slug: "cheese-trap",
 			name: "Cheese Trap",
@@ -298,5 +264,32 @@
 			overview: ["3 Lanes", "Flags", "Strategy"],
 			source: "Community infographic"
 		}
+			*/
+			{
+			slug: "canyon-conquest",
+			name: "Canyon Conquest",
+			tag: "Alliance PvP",
+			image: "images/canyonconquest.png",
+			detailImages: [
+				"images/canyonconquest.png",
+			],
+			summary: "Evento Alliance vs Alliance a tre lane: si conquistano bandiere, si gestiscono i fight in relay e conta sia la distribuzione dei team sia il controllo delle corsie.",
+			extraSummary: "Nel modal vengono mostrate le reference visuali dell'evento e una descrizione piu estesa del flow: gestione delle tre lane, controllo bandiere, rotazioni relay e importanza del bilanciamento tra pressione offensiva e copertura difensiva.",
+			overview: ["3 Lanes", "Flags", "Strategy"],
+			source: "Community infographic"
+		},
+				{
+			slug: "cheese-conquest",
+			name: "Cheese Conquest",
+			tag: "Alliance PvP",
+			image: "images/cheese.png",
+			detailImages: [
+				"images/cheese.png"
+			],
+			summary: "Evento Alliance vs Alliance a tre lane: si conquistano bandiere, si gestiscono i fight in relay e conta sia la distribuzione dei team sia il controllo delle corsie.",
+			extraSummary: "Nel modal vengono mostrate le reference visuali dell'evento e una descrizione piu estesa del flow: gestione delle tre lane, controllo bandiere, rotazioni relay e importanza del bilanciamento tra pressione offensiva e copertura difensiva.",
+			overview: ["3 Lanes", "Flags", "Strategy"],
+			source: "Community infographic"
+		},
 	];
 })();
