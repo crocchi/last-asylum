@@ -363,9 +363,25 @@
 
 	</div>
 
-	<a href="#banner" class="back-to-top scrolly" aria-label="Torna all'inizio pagina">
-		<img src="images/up.jpg" alt="" />
-	</a>
+	<nav class="floating-quick-menu" aria-label="Menu rapido">
+		<div class="floating-quick-actions" id="floating-quick-actions" aria-hidden="true">
+			<a href="#events" class="floating-quick-link scrolly" aria-label="Vai agli eventi" tabindex="-1">
+				<img src="images/card1.jpg" alt="" />
+				<span>Events</span>
+			</a>
+			<a href="#four" class="floating-quick-link scrolly" aria-label="Vai agli eroi" tabindex="-1">
+				<img src="images/hero.png" alt="" />
+				<span>Hero</span>
+			</a>
+			<a href="#five" class="floating-quick-link scrolly" aria-label="Vai ai buildings" tabindex="-1">
+				<img src="images/building_pic.png" alt="" />
+				<span>Build</span>
+			</a>
+		</div>
+		<button type="button" class="floating-quick-toggle" id="floating-quick-toggle" aria-label="Apri menu rapido" aria-expanded="false" aria-controls="floating-quick-actions">
+			<img src="images/up.jpg" alt="" />
+		</button>
+	</nav>
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
@@ -398,6 +414,49 @@
 				});
 			});
 		}
+
+		(function () {
+			var menu = document.querySelector(".floating-quick-menu");
+			var toggle = document.getElementById("floating-quick-toggle");
+			var actions = document.getElementById("floating-quick-actions");
+
+			if (!menu || !toggle || !actions) {
+				return;
+			}
+
+			function setMenuOpen(isOpen) {
+				menu.classList.toggle("is-open", isOpen);
+				actions.setAttribute("aria-hidden", isOpen ? "false" : "true");
+				toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+				toggle.setAttribute("aria-label", isOpen ? "Chiudi menu rapido" : "Apri menu rapido");
+
+				menu.querySelectorAll(".floating-quick-link").forEach(function (link) {
+					link.setAttribute("tabindex", isOpen ? "0" : "-1");
+				});
+			}
+
+			toggle.addEventListener("click", function () {
+				setMenuOpen(!menu.classList.contains("is-open"));
+			});
+
+			menu.querySelectorAll(".floating-quick-link").forEach(function (link) {
+				link.addEventListener("click", function () {
+					setMenuOpen(false);
+				});
+			});
+
+			document.addEventListener("click", function (event) {
+				if (!menu.contains(event.target)) {
+					setMenuOpen(false);
+				}
+			});
+
+			document.addEventListener("keydown", function (event) {
+				if (event.key === "Escape") {
+					setMenuOpen(false);
+				}
+			});
+		})();
 	</script>
 
 </body>
