@@ -1,5 +1,5 @@
-const STATIC_CACHE = "lap-static-v7";
-const RUNTIME_CACHE = "lap-runtime-v7";
+const STATIC_CACHE = "lap-static-v8";
+const RUNTIME_CACHE = "lap-runtime-v8";
 const APP_SHELL = [
 	"./",
 	"./index.html",
@@ -41,12 +41,25 @@ const APP_SHELL = [
 	"./assets/webfonts/fa-regular-400.woff2",
 	"./assets/webfonts/fa-solid-900.woff",
 	"./assets/webfonts/fa-solid-900.woff2",
+	"./images/alliance.png",
 	"./images/arthur-image.webp",
 	"./images/banner.jpg",
 	"./images/bonus1.png",
 	"./images/bonus2.png",
+	"./images/card1.jpg",
+	"./images/cheese_trap.png",
 	"./images/cyntya.png",
+	"./images/elixirscra.png",
+	"./images/event_canyon_1.png",
+	"./images/event_canyon_2.png",
+	"./images/event_canyon_3.png",
+	"./images/event_canyon_post.png",
+	"./images/event_canyon_post2.png",
+	"./images/event_cheeseTrap_post.png",
+	"./images/events.png",
+	"./images/hero.png",
 	"./images/hero_card1.png",
+	"./images/huntbattle.png",
 	"./images/pic01.jpg",
 	"./images/pic02.jpg",
 	"./images/pic03.jpg",

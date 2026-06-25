@@ -1,7 +1,41 @@
 (function () {
 	function createTagList(tags) {
 		return tags.map(function (tag) {
-			return "<li>" + tag + "</li>";
+			return "<li>" + escapeHtml(tag) + "</li>";
+		}).join("");
+	}
+
+	function escapeHtml(value) {
+		return String(value)
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")
+			.replace(/"/g, "&quot;")
+			.replace(/'/g, "&#039;");
+	}
+
+	function createDetailBlocks(details) {
+		if (!details || !details.length) {
+			return "";
+		}
+
+		return details.map(function (detail) {
+			var items = detail.items || [];
+
+			if (!detail.title || !items.length) {
+				return "";
+			}
+
+			return [
+				'<section class="event-detail-block">',
+					'<h4>' + escapeHtml(detail.title) + '</h4>',
+					'<ul>',
+						items.map(function (item) {
+							return "<li>" + escapeHtml(item) + "</li>";
+						}).join(""),
+					'</ul>',
+				'</section>'
+			].join("");
 		}).join("");
 	}
 
@@ -36,6 +70,7 @@
 		var tagNode = document.getElementById("event-modal-tag");
 		var galleryNode = document.getElementById("event-modal-gallery");
 		var summaryNode = document.getElementById("event-modal-summary");
+		var detailsNode = document.getElementById("event-modal-details");
 		var overviewNode = document.getElementById("event-modal-overview");
 		var sourceNode = document.getElementById("event-modal-source");
 		var lastTrigger = null;
@@ -55,6 +90,8 @@
 				return '<img src="' + imagePath + '" alt="' + escapeAttribute(eventItem.name + ' image ' + (index + 1)) + '" loading="lazy" />';
 			}).join("");
 			summaryNode.textContent = field(eventItem, "extraSummary") || field(eventItem, "summary");
+			detailsNode.innerHTML = createDetailBlocks(eventItem.details);
+			detailsNode.hidden = !eventItem.details || !eventItem.details.length;
 			sourceNode.textContent = t("eventSource", { source: eventItem.source });
 			overviewNode.innerHTML = createTagList(eventItem.overview);
 		}
