@@ -49,10 +49,13 @@
 
 	function initBuildingCalculator() {
 		var data = window.LAST_ASYLUM_BUILDINGS;
+		var requirements = window.LAST_ASYLUM_BUILDING_REQUIREMENTS || {};
 		var buildingSelect = document.getElementById("building-select");
 		var currentSelect = document.getElementById("building-current-level");
 		var targetSelect = document.getElementById("building-target-level");
 		var note = document.getElementById("building-note");
+		var requirementsPanel = document.getElementById("building-requirements");
+		var requirementsList = document.getElementById("building-requirements-list");
 
 		if (!data || !buildingSelect || !currentSelect || !targetSelect || !note) {
 			return;
@@ -100,6 +103,57 @@
 			output.herb.textContent = formatNumber(totals.herb);
 			output.time.textContent = formatDuration(totals.time);
 			output.steps.textContent = formatNumber(totals.steps);
+		}
+
+		function renderRequirements(slug, rows) {
+			if (!requirementsPanel || !requirementsList) {
+				return;
+			}
+
+			var buildingRequirements = requirements[slug] || {};
+			var groups = rows.map(function (row) {
+				var targetLevel = row.from + 1;
+				return {
+					level: targetLevel,
+					items: buildingRequirements[String(targetLevel)] || []
+				};
+			}).filter(function (group) {
+				return group.items.length;
+			});
+
+			requirementsList.innerHTML = "";
+
+			if (!groups.length) {
+				requirementsPanel.classList.add("is-empty");
+				requirementsList.innerHTML = "<p>Nessun requisito building disponibile per il range selezionato.</p>";
+				return;
+			}
+
+			requirementsPanel.classList.remove("is-empty");
+
+			groups.forEach(function (group) {
+				var groupNode = document.createElement("section");
+				var title = document.createElement("h4");
+				var list = document.createElement("ul");
+
+				title.textContent = t("level") + " " + group.level;
+
+				group.items.forEach(function (item) {
+					var listItem = document.createElement("li");
+					var name = document.createElement("span");
+					var level = document.createElement("strong");
+
+					name.textContent = item.building;
+					level.textContent = t("level") + " " + item.level;
+					listItem.appendChild(name);
+					listItem.appendChild(level);
+					list.appendChild(listItem);
+				});
+
+				groupNode.appendChild(title);
+				groupNode.appendChild(list);
+				requirementsList.appendChild(groupNode);
+			});
 		}
 
 		function syncLevels() {
@@ -152,6 +206,7 @@
 			}, { wood: 0, grain: 0, herb: 0, time: 0, steps: 0 });
 
 			setTotals(totals);
+			renderRequirements(buildingSelect.value, rows);
 
 			if (rows.length !== requiredSteps) {
 				note.textContent = t("partialData", { building: selectedBuilding.name });

@@ -1,5 +1,5 @@
-const STATIC_CACHE = "lap-static-v6";
-const RUNTIME_CACHE = "lap-runtime-v6";
+const STATIC_CACHE = "lap-static-v7";
+const RUNTIME_CACHE = "lap-runtime-v7";
 const APP_SHELL = [
 	"./",
 	"./index.html",
@@ -29,6 +29,7 @@ const APP_SHELL = [
 	"./assets/js/events-data.js",
 	"./assets/js/events.js",
 	"./assets/js/building-calculator-data.js",
+	"./assets/js/building-requirements-data.js",
 	"./assets/js/building-calculator.js",
 	"./assets/pwa/apple-touch-icon.png",
 	"./assets/pwa/icon-192.png",

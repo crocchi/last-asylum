@@ -1353,6 +1353,78 @@ body.hero-modal-open {
 	line-height: 1.2;
 }
 
+.building-requirements {
+	margin-top: 1.25em;
+	padding: 1.1em;
+	border: 1px solid rgba(182, 190, 118, 0.18);
+	border-radius: 1em;
+	background: rgba(10, 13, 10, 0.44);
+	text-align: left;
+}
+
+.building-requirements h3 {
+	margin: 0 0 0.85rem;
+	color: var(--lap-accent-soft);
+	font-size: 0.78rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.building-requirements section {
+	display: grid;
+	gap: 0.65rem;
+	padding: 0.85rem 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.building-requirements section:first-child {
+	padding-top: 0;
+	border-top: 0;
+}
+
+.building-requirements h4 {
+	margin: 0;
+	font-size: 0.9rem;
+	color: var(--lap-paper);
+}
+
+.building-requirements ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.55rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.building-requirements li {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55rem;
+	padding: 0.45rem 0.65rem;
+	border: 1px solid rgba(182, 190, 118, 0.16);
+	border-radius: 999px;
+	background: rgba(127, 139, 58, 0.12);
+	font-size: 0.82rem;
+}
+
+.building-requirements li strong {
+	color: var(--lap-accent-soft);
+	font-size: 0.72rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.building-requirements.is-empty {
+	border-style: dashed;
+}
+
+.building-requirements.is-empty p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.66);
+	font-size: 0.86rem;
+}
+
 .building-note {
 	margin: 1.15em 0 0;
 	font-size: 0.82em;
