@@ -39,6 +39,43 @@
 		}).join("");
 	}
 
+	function formatNumber(value) {
+		return Number(value).toLocaleString();
+	}
+
+	function createScoringBlocks(scoring) {
+		if (!scoring || !scoring.length) {
+			return "";
+		}
+
+		return [
+			'<h4>Punti azioni</h4>',
+			scoring.map(function (group) {
+				var actions = group.actions || [];
+
+				if (!group.title || !actions.length) {
+					return "";
+				}
+
+				return [
+					'<section class="event-score-block">',
+						'<h5>' + escapeHtml(group.title) + '</h5>',
+						'<ul>',
+							actions.map(function (action) {
+								return [
+									'<li>',
+										'<span>' + escapeHtml(formatNumber(action.amount) + " " + action.label) + '</span>',
+										'<strong>' + escapeHtml(formatNumber(action.points) + " pt") + '</strong>',
+									'</li>'
+								].join("");
+							}).join(""),
+						'</ul>',
+					'</section>'
+				].join("");
+			}).join("")
+		].join("");
+	}
+
 	function escapeAttribute(value) {
 		return String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 	}
@@ -71,6 +108,7 @@
 		var galleryNode = document.getElementById("event-modal-gallery");
 		var summaryNode = document.getElementById("event-modal-summary");
 		var detailsNode = document.getElementById("event-modal-details");
+		var scoringNode = document.getElementById("event-modal-scoring");
 		var overviewNode = document.getElementById("event-modal-overview");
 		var sourceNode = document.getElementById("event-modal-source");
 		var lastTrigger = null;
@@ -92,6 +130,8 @@
 			summaryNode.textContent = field(eventItem, "extraSummary") || field(eventItem, "summary");
 			detailsNode.innerHTML = createDetailBlocks(eventItem.details);
 			detailsNode.hidden = !eventItem.details || !eventItem.details.length;
+			scoringNode.innerHTML = createScoringBlocks(eventItem.scoring);
+			scoringNode.hidden = !eventItem.scoring || !eventItem.scoring.length;
 			sourceNode.textContent = t("eventSource", { source: eventItem.source });
 			overviewNode.innerHTML = createTagList(eventItem.overview);
 		}

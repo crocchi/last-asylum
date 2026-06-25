@@ -1312,6 +1312,63 @@ body.hero-modal-open {
 	margin-top: 0.35rem;
 }
 
+.event-modal-scoring {
+	display: grid;
+	gap: 0.85rem;
+	margin: 1.1rem 0;
+}
+
+.event-modal-scoring > h4 {
+	margin: 0;
+	color: #f4d27a;
+	font-size: 0.9rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.event-score-block {
+	overflow: hidden;
+	border: 1px solid rgba(244, 210, 122, 0.14);
+	border-radius: 0.85rem;
+	background: rgba(4, 9, 11, 0.45);
+}
+
+.event-score-block h5 {
+	margin: 0;
+	padding: 0.65rem 0.8rem;
+	background: rgba(244, 210, 122, 0.08);
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 0.85rem;
+}
+
+.event-score-block ul {
+	margin: 0;
+	padding: 0.3rem 0.8rem 0.7rem;
+	list-style: none;
+}
+
+.event-score-block li {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.4rem 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	color: rgba(255, 255, 255, 0.78);
+	font-size: 0.9rem;
+	line-height: 1.35;
+}
+
+.event-score-block li:last-child {
+	border-bottom: 0;
+}
+
+.event-score-block strong {
+	flex: 0 0 auto;
+	color: #f4d27a;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
 .event-modal-overview {
 	margin-top: 1rem;
 }

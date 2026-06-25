@@ -41,8 +41,98 @@
 					]
 				}
 			],
+			scoring: [
+				{
+					title: "Day 1 - Gather/Raven",
+					actions: [
+						{ label: "Stamina", amount: 1, points: 150 },
+						{ label: "Raven Fruit", amount: 1, points: 3 },
+						{ label: "Raven Essence", amount: 1, points: 2500 },
+						{ label: "Antitoxin", amount: 660, points: 1 },
+						{ label: "Pack Diamond", amount: 1, points: 30 },
+						{ label: "Grain", amount: 100, points: 5 },
+						{ label: "Timber", amount: 100, points: 5 },
+						{ label: "Herbs", amount: 60, points: 5 },
+						{ label: "Falcon Quest", amount: 1, points: 10000 }
+					]
+				},
+				{
+					title: "Day 2 - Build",
+					actions: [
+						{ label: "UR Trade Caravan", amount: 1, points: 1000000 },
+						{ label: "Recruit Survivor", amount: 1, points: 1500 },
+						{ label: "Pack Diamond", amount: 1, points: 30 },
+						{ label: "Construction Spd 1m", amount: 1, points: 50 },
+						{ label: "Building Might", amount: 1, points: 10 },
+						{ label: "UR Covert Op", amount: 1, points: 75000 }
+					]
+				},
+				{
+					title: "Day 3 - Research",
+					actions: [
+						{ label: "Pack Diamond", amount: 1, points: 30 },
+						{ label: "Research Spd 1m", amount: 1, points: 50 },
+						{ label: "Study Scroll", amount: 1, points: 300 },
+						{ label: "Falcon Quest", amount: 1, points: 10000 },
+						{ label: "Tech Might", amount: 1, points: 10 },
+						{ label: "Lv. 1 Raven Gear Chest", amount: 1, points: 1100 },
+						{ label: "Lv. 2 Raven Gear Chest", amount: 1, points: 3300 },
+						{ label: "Lv. 3 Raven Gear Chest", amount: 1, points: 10000 },
+						{ label: "Lv. 4 Raven Gear Chest", amount: 1, points: 30000 },
+						{ label: "Lv. 5 Raven Gear Chest", amount: 1, points: 90000 },
+						{ label: "Lv. 6 Raven Gear Chest", amount: 1, points: 270000 },
+						{ label: "Lv. 7 Raven Gear Chest", amount: 1, points: 810000 }
+					]
+				},
+				{
+					title: "Day 4 - Heroes",
+					actions: [
+						{ label: "Pack Diamond", amount: 1, points: 30 },
+						{ label: "Antitoxin", amount: 660, points: 1 },
+						{ label: "Recruit Heroes", amount: 1, points: 1500 },
+						{ label: "UR Hero Shard", amount: 1, points: 10000 },
+						{ label: "SSR Hero Shard", amount: 1, points: 3500 },
+						{ label: "SR Hero Shard", amount: 1, points: 1000 },
+						{ label: "Skill Book", amount: 1, points: 10 }
+					]
+				},
+				{
+					title: "Day 5 - Train Troops",
+					actions: [
+						{ label: "Pack Diamond", amount: 1, points: 30 },
+						{ label: "Falcon Quest", amount: 1, points: 10000 },
+						{ label: "Building Might", amount: 1, points: 10 },
+						{ label: "Construction Spd 1m", amount: 1, points: 50 },
+						{ label: "Tech Might", amount: 1, points: 10 },
+						{ label: "Research Spd 1m", amount: 1, points: 50 },
+						{ label: "Training Spd 1m", amount: 1, points: 50 },
+						{ label: "LvL1 Soldier", amount: 1, points: 20 },
+						{ label: "LvL2 Soldier", amount: 1, points: 30 },
+						{ label: "LvL3 Soldier", amount: 1, points: 40 },
+						{ label: "LvL4 Soldier", amount: 1, points: 50 },
+						{ label: "LvL5 Soldier", amount: 1, points: 60 },
+						{ label: "LvL6 Soldier", amount: 1, points: 70 },
+						{ label: "LvL7 Soldier", amount: 1, points: 80 },
+						{ label: "LvL8 Soldier", amount: 1, points: 90 },
+						{ label: "LvL9 Soldier", amount: 1, points: 100 },
+						{ label: "LvL10 Soldier", amount: 1, points: 110 }
+					]
+				},
+				{
+					title: "Day 6 - Raid Day",
+					actions: [
+						{ label: "Pack Diamond", amount: 1, points: 30 },
+						{ label: "Construction Spd 1m", amount: 1, points: 50 },
+						{ label: "UR Trade Caravan", amount: 1, points: 100000 },
+						{ label: "UR Covert Op", amount: 1, points: 75000 },
+						{ label: "Research Spd 1m", amount: 1, points: 50 },
+						{ label: "Training Spd 1m", amount: 1, points: 50 },
+						{ label: "Healing Spd 1m", amount: 1, points: 50 }
+					]
+				}
+			],
 			overview: ["6 giorni", "Top 32", "Fasi giornaliere"],
-			source: "Riepilogo Esecutivo.pdf"
+			source: "Riepilogo Esecutivo.pdf + last-asylum-unofficial.com/EventView"
 		},
 		{
 			slug: "hunt-battle",
