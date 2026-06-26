@@ -1,5 +1,5 @@
-const STATIC_CACHE = "lap-static-v18";
-const RUNTIME_CACHE = "lap-runtime-v18";
+const STATIC_CACHE = "lap-static-v19";
+const RUNTIME_CACHE = "lap-runtime-v19";
 const APP_SHELL = [
 	"./",
 	"./index.html",
@@ -70,6 +70,7 @@ const APP_SHELL = [
 	"./images/pic08.jpg",
 	"./images/RESEARCH.jpeg",
 	"./images/raven.png",
+	"./images/raven_event.jpeg",
 	"./images/tank.png",
 	"./images/train_soldier.png",
 	"./images/train_soldier_event.jpeg",
