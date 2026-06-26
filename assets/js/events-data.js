@@ -483,18 +483,46 @@
 			overview: ["3 Lane", "Top 15 Might", "Vinci 2/3"],
 			source: "canyon_ss.jpeg + strategia alliance"
 		},
-				{
+		{
 			slug: "cheese-conquest",
-			name: "Cheese Conquest",
-			tag: "Alliance PvP",
+			name: "Cheese Trap",
+			tag: "Alliance Boss",
 			image: "images/cheese.png",
 			detailImages: [
-				"images/cheese.png"
+				"images/event_cheeseTrap_post.png",
+				"images/cheese.png",
+				"images/cheese_trap.png"
 			],
-			summary: "Evento Alliance vs Alliance a tre lane: si conquistano bandiere, si gestiscono i fight in relay e conta sia la distribuzione dei team sia il controllo delle corsie.",
-			extraSummary: "Nel modal vengono mostrate le reference visuali dell'evento e una descrizione piu estesa del flow: gestione delle tre lane, controllo bandiere, rotazioni relay e importanza del bilanciamento tra pressione offensiva e copertura difensiva.",
-			overview: ["3 Lanes", "Flags", "Strategy"],
-			source: "Community infographic"
+			summary: "Evento boss cooperativo di alleanza: i membri devono coordinarsi per rallyare il boss Cheese Trap e massimizzare reward e danno.",
+			extraSummary: "Cheese Trap e un alliance boss event. Funziona meglio quando l'alleanza lo apre in un orario concordato, con molti membri online e rally guidati dai player piu forti. I membri piu deboli dovrebbero riempire i rally migliori invece di disperdere tentativi.",
+			details: [
+				{
+					title: "Meccaniche",
+					items: [
+						"Evento cooperativo di alleanza basato su rally contro un boss.",
+						"Il sito unofficial lo descrive come: rally the giant rat in the cheese trap with your allies.",
+						"Salire di livello Cheese Trap sblocca reward migliori nel tempo."
+					]
+				},
+				{
+					title: "Strategia alleanza",
+					items: [
+						"Aprire o attivare l'evento quando molti membri sono online, non in orari casuali.",
+						"Coordinare l'orario in chat alleanza prima dell'attivazione.",
+						"Usare i player piu forti come leader dei rally."
+					]
+				},
+				{
+					title: "Gestione rally",
+					items: [
+						"I player piu deboli dovrebbero joinare i rally dei forti invece di aprire rally separati.",
+						"Se ci sono tentativi o tempo limitato, evitare rally dispersi: meglio pochi rally forti e pieni.",
+						"Trattare l'upgrade del Cheese Trap come obiettivo progressivo dell'alleanza."
+					]
+				}
+			],
+			overview: ["Alliance Boss", "Rally", "Reward Level"],
+			source: "event_cheeseTrap_post.png + last-asylum-unofficial.com"
 		},
 	];
 })();
