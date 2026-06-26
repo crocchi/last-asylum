@@ -452,10 +452,36 @@
 			detailImages: [
 				"images/canyon_ss.jpeg",
 			],
-			summary: "Evento Alliance vs Alliance a tre lane: si conquistano bandiere, si gestiscono i fight in relay e conta sia la distribuzione dei team sia il controllo delle corsie.",
-			extraSummary: "Nel modal vengono mostrate le reference visuali dell'evento e una descrizione piu estesa del flow: gestione delle tre lane, controllo bandiere, rotazioni relay e importanza del bilanciamento tra pressione offensiva e copertura difensiva.",
-			overview: ["3 Lanes", "Flags", "Strategy"],
-			source: "Community infographic"
+			summary: "Evento Alliance vs Alliance a tre corsie: la vittoria dipende dalla distribuzione del might e dal controllo di almeno due lane su tre.",
+			extraSummary: "Canyon Conquest premia la pianificazione prima della battaglia. Ogni alleanza distribuisce i membri su Left, Mid e Right Lane: partecipano al fight i top 15 per might di ogni corsia, quindi non basta iscrivere tanti player, bisogna concentrare bene il potere.",
+			details: [
+				{
+					title: "Meccaniche",
+					items: [
+						"L'evento passa da Registration Phase, Matching Phase, Battle Phase e Settlement Phase.",
+						"Le corsie sono Left Lane, Mid Lane e Right Lane.",
+						"In ogni lane combattono i player nella top 15 per Might; chi si registra ma non entra in battaglia riceve comunque reward."
+					]
+				},
+				{
+					title: "Strategia 2 corsie su 3",
+					items: [
+						"Se l'alleanza e piu forte, non distribuire il potere in modo troppo uniforme: punta a vincere con sicurezza 2 corsie su 3.",
+						"Concentra i player migliori su due lane chiave e lascia la terza solo coperta, senza sprecare troppo might.",
+						"Prima del lock controlla View Deployment: se una corsia e gia molto forte, sposta potere sulla seconda corsia da vincere."
+					]
+				},
+				{
+					title: "Consigli pratici",
+					items: [
+						"Usa Edit Troop prima della fine della preparation phase.",
+						"Bilancia le corsie in base al might reale dei top 15, non al numero totale di iscritti.",
+						"Dopo il match controlla Match Record per capire se hai perso per distribuzione sbagliata o per differenza di potere."
+					]
+				}
+			],
+			overview: ["3 Lane", "Top 15 Might", "Vinci 2/3"],
+			source: "canyon_ss.jpeg + strategia alliance"
 		},
 				{
 			slug: "cheese-conquest",
