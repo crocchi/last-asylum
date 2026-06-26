@@ -489,8 +489,6 @@
 			tag: "Alliance Boss",
 			image: "images/cheese.png",
 			detailImages: [
-				"images/event_cheeseTrap_post.png",
-				"images/cheese.png",
 				"images/cheese_trap.png"
 			],
 			summary: "Evento boss cooperativo di alleanza: i membri devono coordinarsi per rallyare il boss Cheese Trap e massimizzare reward e danno.",
