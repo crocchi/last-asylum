@@ -196,20 +196,18 @@
 			slug: "research-technology",
 			name: "Research Technology",
 			tag: "Research Event",
-			image: "images/RESEARCH.jpeg",
+			image: "images/search.png",
 			detailImages: [
 				"images/RESEARCH.jpeg"
 			],
 			summary: "Evento a punteggio per la ricerca: usa speed-up ricerca, aumenta Tech Might e raccogli punti milestone e ranking.",
-			extraSummary: "Research Technology premia chi concentra ricerca e speed-up nel momento giusto. Dallo screenshot si vede un evento a tempo con range Lv.23-24, ranking personale, total points e reward divisi in fasi.",
+			extraSummary: "Research Technology premia chi concentra ricerca e speed-up nel momento giusto.",
 			details: [
 				{
 					title: "Meccaniche",
 					items: [
 						"Evento a tempo con classifica personale e punti totali.",
-						"La schermata mostra Current Range Lv.23-24 e ranking personale.",
-						"I reward sono divisi in fasi: Phase 1 a 5.000 punti, Phase 2 a 10.000, Phase 3 a 17.000 e Phase 4 a 24.000."
-					]
+						]
 				},
 				{
 					title: "Come fare punti",
@@ -239,7 +237,7 @@
 				}
 			],
 			overview: ["Research", "Tech Might", "Milestone"],
-			source: "RESEARCH.jpeg + last-asylum-unofficial.com/EventView"
+			source: "RESEARCH"
 		},
 		{
 			slug: "hunt-battle",
@@ -285,7 +283,7 @@
 				}
 			],
 			overview: ["15 ondate", "20+ membri", "R5/R4"],
-			source: "Riepilogo Esecutivo.pdf"
+			source: "Riepilogo Esecutivo"
 		},
 		{
 			slug: "crystal-cluster-valley",
@@ -452,7 +450,7 @@
 			tag: "Alliance PvP",
 			image: "images/canyonconquest.png",
 			detailImages: [
-				"images/canyonconquest.png",
+				"images/canyon_ss.jpeg",
 			],
 			summary: "Evento Alliance vs Alliance a tre lane: si conquistano bandiere, si gestiscono i fight in relay e conta sia la distribuzione dei team sia il controllo delle corsie.",
 			extraSummary: "Nel modal vengono mostrate le reference visuali dell'evento e una descrizione piu estesa del flow: gestione delle tre lane, controllo bandiere, rotazioni relay e importanza del bilanciamento tra pressione offensiva e copertura difensiva.",
