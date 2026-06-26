@@ -150,8 +150,7 @@
 					title: "Meccaniche",
 					items: [
 						"Evento a tempo con classifica personale e punti totali.",
-						"La schermata mostra Current Range Lv.23-24, utile per confrontare giocatori in fascia simile.",
-						"I reward sono divisi in fasi: nello screenshot compaiono Phase 1 a 12.000 punti, Phase 2 a 24.000, Phase 3 a 42.000 e Phase 4 a 60.000."
+						"Phase 1 a 12.000 punti, Phase 2 a 24.000, Phase 3 a 42.000 e Phase 4 a 60.000..."
 					]
 				},
 				{
