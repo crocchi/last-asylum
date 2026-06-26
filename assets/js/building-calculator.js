@@ -53,6 +53,7 @@
 		var buildingSelect = document.getElementById("building-select");
 		var currentSelect = document.getElementById("building-current-level");
 		var targetSelect = document.getElementById("building-target-level");
+		var speedBonusInput = document.getElementById("building-speed-bonus");
 		var note = document.getElementById("building-note");
 		var requirementsPanel = document.getElementById("building-requirements");
 		var requirementsList = document.getElementById("building-requirements-list");
@@ -66,6 +67,7 @@
 			grain: document.getElementById("rss-grain"),
 			herb: document.getElementById("rss-herb"),
 			time: document.getElementById("rss-time"),
+			bonusTime: document.getElementById("rss-bonus-time"),
 			steps: document.getElementById("rss-steps")
 		};
 
@@ -97,11 +99,37 @@
 			}
 		}
 
+		function getSpeedBonus() {
+			if (!speedBonusInput) {
+				return 0;
+			}
+
+			var value = parseFloat(speedBonusInput.value);
+
+			if (!isFinite(value) || value < 0) {
+				return 0;
+			}
+
+			return value;
+		}
+
+		function getBonusTime(baseTime, speedBonus) {
+			if (!baseTime || !speedBonus) {
+				return baseTime;
+			}
+
+			return Math.ceil(baseTime / (1 + (speedBonus / 100)));
+		}
+
 		function setTotals(totals) {
+			var speedBonus = getSpeedBonus();
 			output.wood.textContent = formatNumber(totals.wood);
 			output.grain.textContent = formatNumber(totals.grain);
 			output.herb.textContent = formatNumber(totals.herb);
 			output.time.textContent = formatDuration(totals.time);
+			if (output.bonusTime) {
+				output.bonusTime.textContent = formatDuration(getBonusTime(totals.time, speedBonus));
+			}
 			output.steps.textContent = formatNumber(totals.steps);
 		}
 
@@ -223,6 +251,9 @@
 		});
 		currentSelect.addEventListener("change", updateCalculator);
 		targetSelect.addEventListener("change", updateCalculator);
+		if (speedBonusInput) {
+			speedBonusInput.addEventListener("input", updateCalculator);
+		}
 
 		buildingSelect.value = entries[0].slug;
 		fillSelect(currentSelect, 1, data[buildingSelect.value].rows[data[buildingSelect.value].rows.length - 1].from, 1);

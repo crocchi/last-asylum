@@ -332,13 +332,18 @@
 								<span data-i18n="targetLevel">Livello target</span>
 								<select id="building-target-level" name="target-level"></select>
 							</label>
+							<label class="building-field">
+								<span data-i18n="buildingSpeedBonus">Bonus costruzione (%)</span>
+								<input id="building-speed-bonus" name="speed-bonus" type="number" min="0" max="1000" step="1" value="0" inputmode="decimal" />
+							</label>
 						</div>
 					</form>
 					<div class="building-results">
 						<div class="building-total"><span data-i18n="wood">Wood</span><strong id="rss-wood">0</strong></div>
 						<div class="building-total"><span data-i18n="grain">Grain</span><strong id="rss-grain">0</strong></div>
 						<div class="building-total"><span data-i18n="herbs">Herbs</span><strong id="rss-herb">0</strong></div>
-						<div class="building-total"><span data-i18n="time">Time</span><strong id="rss-time">0s</strong></div>
+						<div class="building-total"><span data-i18n="baseTime">Tempo base</span><strong id="rss-time">0s</strong></div>
+						<div class="building-total"><span data-i18n="bonusTime">Tempo con bonus</span><strong id="rss-bonus-time">0s</strong></div>
 						<div class="building-total"><span data-i18n="steps">Steps</span><strong id="rss-steps">0</strong></div>
 					</div>
 					<div class="building-requirements" id="building-requirements">
