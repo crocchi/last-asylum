@@ -135,6 +135,65 @@
 			source: "Riepilogo Esecutivo.pdf + last-asylum-unofficial.com/EventView"
 		},
 		{
+			slug: "train-soldiers",
+			name: "Train Soldiers",
+			tag: "Training Event",
+			image: "images/train_soldier.png",
+			detailImages: [
+				"images/train_soldier_event.jpeg",
+				"images/train_soldier.png"
+			],
+			summary: "Evento a punteggio dedicato all'addestramento truppe: usa boost training, allena soldati e raccogli punti per milestone e ranking.",
+			extraSummary: "Train Soldiers premia la crescita militare rapida. Dallo screenshot si vede un evento a tempo con range giocatore, classifica, total points e reward per fasi. Le azioni principali sono usare boost di addestramento, trainare soldati e acquistare pack con diamanti.",
+			details: [
+				{
+					title: "Meccaniche",
+					items: [
+						"Evento a tempo con classifica personale e punti totali.",
+						"La schermata mostra Current Range Lv.23-24, utile per confrontare giocatori in fascia simile.",
+						"I reward sono divisi in fasi: nello screenshot compaiono Phase 1 a 12.000 punti, Phase 2 a 24.000, Phase 3 a 42.000 e Phase 4 a 60.000."
+					]
+				},
+				{
+					title: "Come fare punti",
+					items: [
+						"Usa Training Boost da 1 minuto.",
+						"Allena soldati: piu alto e il livello della truppa, piu punti ottieni.",
+						"I pack che contengono diamanti danno punti extra."
+					]
+				},
+				{
+					title: "Strategia",
+					items: [
+						"Prepara code di training e speed-up prima dell'evento.",
+						"Se sei vicino a una fase premio, usa boost piccoli per chiudere la milestone senza sprecare risorse.",
+						"Valuta il ranking solo quando hai abbastanza speed-up per superare i giocatori vicini."
+					]
+				}
+			],
+			scoring: [
+				{
+					title: "How to Earn Points",
+					actions: [
+						{ label: "Training Boost 1m", amount: 1, points: 10 },
+						{ label: "LvL1 Soldier", amount: 1, points: 5 },
+						{ label: "LvL2 Soldier", amount: 1, points: 6 },
+						{ label: "LvL3 Soldier", amount: 1, points: 7 },
+						{ label: "LvL4 Soldier", amount: 1, points: 13 },
+						{ label: "LvL5 Soldier", amount: 1, points: 15 },
+						{ label: "LvL6 Soldier", amount: 1, points: 19 },
+						{ label: "LvL7 Soldier", amount: 1, points: 22 },
+						{ label: "LvL8 Soldier", amount: 1, points: 25 },
+						{ label: "LvL9 Soldier", amount: 1, points: 28 },
+						{ label: "LvL10 Soldier", amount: 1, points: 31 },
+						{ label: "Pack Diamond", amount: 1, points: 30 }
+					]
+				}
+			],
+			overview: ["Training", "Ranking", "Milestone"],
+			source: "train_soldier_event.jpeg + last-asylum-unofficial.com/EventView"
+		},
+		{
 			slug: "hunt-battle",
 			name: "Hunt Battle",
 			tag: "Alliance PvE",
@@ -340,21 +399,6 @@
 		},*/
 		
 		{
-			slug: "train-soldiers",
-			name: "Train Soldiers",
-			tag: "PvE Special",
-			image: "images/train_soldier.png",
-			detailImages: [
-				"images/train_soldier.png",
-				
-			],
-			summary: "Evento Alliance vs Alliance a tre lane: si conquistano bandiere, si gestiscono i fight in relay e conta sia la distribuzione dei team sia il controllo delle corsie.",
-			extraSummary: "Nel modal vengono mostrate le reference visuali dell'evento e una descrizione piu estesa del flow: gestione delle tre lane, controllo bandiere, rotazioni relay e importanza del bilanciamento tra pressione offensiva e copertura difensiva.",
-			overview: ["3 Lanes", "Flags", "Strategy"],
-			source: "Community infographic"
-		},
-			
-			{
 			slug: "canyon-conquest",
 			name: "Canyon Conquest",
 			tag: "Alliance PvP",
