@@ -54,6 +54,8 @@
 		var currentSelect = document.getElementById("building-current-level");
 		var targetSelect = document.getElementById("building-target-level");
 		var speedBonusInput = document.getElementById("building-speed-bonus");
+		var speedBonusHelp = document.getElementById("building-speed-bonus-help");
+		var speedBonusGuide = document.getElementById("building-speed-bonus-guide");
 		var note = document.getElementById("building-note");
 		var requirementsPanel = document.getElementById("building-requirements");
 		var requirementsList = document.getElementById("building-requirements-list");
@@ -253,6 +255,13 @@
 		targetSelect.addEventListener("change", updateCalculator);
 		if (speedBonusInput) {
 			speedBonusInput.addEventListener("input", updateCalculator);
+		}
+		if (speedBonusHelp && speedBonusGuide) {
+			speedBonusHelp.addEventListener("click", function () {
+				var isOpen = !speedBonusGuide.hidden;
+				speedBonusGuide.hidden = isOpen;
+				speedBonusHelp.setAttribute("aria-expanded", String(!isOpen));
+			});
 		}
 
 		buildingSelect.value = entries[0].slug;

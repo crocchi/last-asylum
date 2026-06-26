@@ -333,11 +333,23 @@
 								<select id="building-target-level" name="target-level"></select>
 							</label>
 							<label class="building-field">
-								<span data-i18n="buildingSpeedBonus">Bonus costruzione (%)</span>
+								<span class="building-bonus-label">
+									<button type="button" class="building-help-trigger" id="building-speed-bonus-help" aria-expanded="false" aria-controls="building-speed-bonus-guide">
+										<span data-i18n="buildingSpeedBonus">Bonus costruzione (%)</span>
+									</button>
+								</span>
 								<input id="building-speed-bonus" name="speed-bonus" type="number" min="0" max="1000" step="1" value="0" inputmode="decimal" />
 							</label>
 						</div>
 					</form>
+					<div class="building-bonus-guide" id="building-speed-bonus-guide" hidden>
+						<h3 data-i18n="buildingBonusGuideTitle">Come trovare il bonus player</h3>
+						<ol>
+							<li data-i18n="buildingBonusGuideStep1">Click on your city on the map.</li>
+							<li data-i18n="buildingBonusGuideStep2">Open the Economy tab.</li>
+							<li data-i18n="buildingBonusGuideStep3">Find the Building Construction Speed value in the list.</li>
+						</ol>
+					</div>
 					<div class="building-results">
 						<div class="building-total"><span data-i18n="wood">Wood</span><strong id="rss-wood">0</strong></div>
 						<div class="building-total"><span data-i18n="grain">Grain</span><strong id="rss-grain">0</strong></div>
