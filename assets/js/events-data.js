@@ -337,24 +337,23 @@
 			],
 			overview: ["Parziale", "Raven/Eroi", "PvE"],
 			source: "Riepilogo Esecutivo.pdf"
-		},
+		},*/
 		
 		{
-			slug: "cheese-trap",
-			name: "Cheese Trap",
-			tag: "Alliance PvP",
-			image: "images/cheese_trap.png",
+			slug: "train-soldiers",
+			name: "Train Soldiers",
+			tag: "PvE Special",
+			image: "images/train_soldier.png",
 			detailImages: [
-				"images/cheese_trap.png",
-				"images/huntbattle.png",
-				"images/event_cheeseTrap_post.png"
+				"images/train_soldier.png",
+				
 			],
 			summary: "Evento Alliance vs Alliance a tre lane: si conquistano bandiere, si gestiscono i fight in relay e conta sia la distribuzione dei team sia il controllo delle corsie.",
 			extraSummary: "Nel modal vengono mostrate le reference visuali dell'evento e una descrizione piu estesa del flow: gestione delle tre lane, controllo bandiere, rotazioni relay e importanza del bilanciamento tra pressione offensiva e copertura difensiva.",
 			overview: ["3 Lanes", "Flags", "Strategy"],
 			source: "Community infographic"
-		}
-			*/
+		},
+			
 			{
 			slug: "canyon-conquest",
 			name: "Canyon Conquest",
