@@ -43,23 +43,24 @@
 		return Number(value).toLocaleString();
 	}
 
-	function createScoringBlocks(scoring) {
+	function createScoringBlocks(scoring, scoringTitles) {
 		if (!scoring || !scoring.length) {
 			return "";
 		}
 
 		return [
-			'<h4>Punti azioni</h4>',
-			scoring.map(function (group) {
+			'<h4>' + escapeHtml(t("eventScoringTitle")) + '</h4>',
+			scoring.map(function (group, index) {
 				var actions = group.actions || [];
+				var title = scoringTitles && scoringTitles[index] ? scoringTitles[index] : group.title;
 
-				if (!group.title || !actions.length) {
+				if (!title || !actions.length) {
 					return "";
 				}
 
 				return [
 					'<section class="event-score-block">',
-						'<h5>' + escapeHtml(group.title) + '</h5>',
+						'<h5>' + escapeHtml(title) + '</h5>',
 						'<ul>',
 							actions.map(function (action) {
 								return [
@@ -123,17 +124,17 @@
 			var detailImages = eventItem.detailImages && eventItem.detailImages.length ? eventItem.detailImages : [eventItem.image];
 
 			titleNode.textContent = eventItem.name;
-			tagNode.textContent = eventItem.tag;
+			tagNode.textContent = field(eventItem, "tag");
 			galleryNode.innerHTML = detailImages.map(function (imagePath, index) {
 				return '<img src="' + imagePath + '" alt="' + escapeAttribute(eventItem.name + ' image ' + (index + 1)) + '" loading="lazy" />';
 			}).join("");
 			summaryNode.textContent = field(eventItem, "extraSummary") || field(eventItem, "summary");
-			detailsNode.innerHTML = createDetailBlocks(eventItem.details);
-			detailsNode.hidden = !eventItem.details || !eventItem.details.length;
-			scoringNode.innerHTML = createScoringBlocks(eventItem.scoring);
+			detailsNode.innerHTML = createDetailBlocks(field(eventItem, "details"));
+			detailsNode.hidden = !field(eventItem, "details") || !field(eventItem, "details").length;
+			scoringNode.innerHTML = createScoringBlocks(eventItem.scoring, field(eventItem, "scoringTitles"));
 			scoringNode.hidden = !eventItem.scoring || !eventItem.scoring.length;
 			sourceNode.textContent = t("eventSource", { source: eventItem.source });
-			overviewNode.innerHTML = createTagList(eventItem.overview);
+			overviewNode.innerHTML = createTagList(field(eventItem, "overview"));
 		}
 
 		function openModal(eventItem, trigger) {
