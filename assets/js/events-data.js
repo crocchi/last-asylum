@@ -193,6 +193,55 @@
 			source: "train_soldier_event.jpeg + last-asylum-unofficial.com/EventView"
 		},
 		{
+			slug: "research-technology",
+			name: "Research Technology",
+			tag: "Research Event",
+			image: "images/RESEARCH.jpeg",
+			detailImages: [
+				"images/RESEARCH.jpeg"
+			],
+			summary: "Evento a punteggio per la ricerca: usa speed-up ricerca, aumenta Tech Might e raccogli punti milestone e ranking.",
+			extraSummary: "Research Technology premia chi concentra ricerca e speed-up nel momento giusto. Dallo screenshot si vede un evento a tempo con range Lv.23-24, ranking personale, total points e reward divisi in fasi.",
+			details: [
+				{
+					title: "Meccaniche",
+					items: [
+						"Evento a tempo con classifica personale e punti totali.",
+						"La schermata mostra Current Range Lv.23-24 e ranking personale.",
+						"I reward sono divisi in fasi: Phase 1 a 5.000 punti, Phase 2 a 10.000, Phase 3 a 17.000 e Phase 4 a 24.000."
+					]
+				},
+				{
+					title: "Come fare punti",
+					items: [
+						"Usa Research Speedup da 1 minuto.",
+						"Aumenta Tech Might completando ricerche.",
+						"I pack che contengono diamanti danno punti extra."
+					]
+				},
+				{
+					title: "Strategia",
+					items: [
+						"Prepara ricerche lunghe quasi finite e completa durante l'evento.",
+						"Usa speed-up ricerca solo quando servono per chiudere milestone o superare un rank vicino.",
+						"Conserva Study Scroll e risorse ricerca per i giorni evento o per Alliance Duel Day 3."
+					]
+				}
+			],
+			scoring: [
+				{
+					title: "How to Earn Points",
+					actions: [
+						{ label: "Research Speedup 1m", amount: 1, points: 10 },
+						{ label: "Tech Might", amount: 1, points: 1 },
+						{ label: "Pack Diamond", amount: 1, points: 30 }
+					]
+				}
+			],
+			overview: ["Research", "Tech Might", "Milestone"],
+			source: "RESEARCH.jpeg + last-asylum-unofficial.com/EventView"
+		},
+		{
 			slug: "hunt-battle",
 			name: "Hunt Battle",
 			tag: "Alliance PvE",
