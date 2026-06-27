@@ -13,7 +13,7 @@
 			details: [
 				{
 					title: "Meccaniche",
-					items: [
+					items: [   
 						"Durata di 6 giorni, da lunedi a sabato.",
 						"Fasi tematiche: Raven, Costruzione, Ricerca, Eroi, Preparazione e Raid.",
 						"Il punteggio cresce completando azioni coerenti con la fase del giorno."
@@ -144,7 +144,7 @@
 				"images/raven.png"
 			],
 			summary: "Evento a punteggio dedicato al Raven: consuma Raven Fruits e Stamina per raccogliere punti, milestone e ranking.",
-			extraSummary: "Enhance Raven premia chi concentra potenziamenti Raven e consumo stamina durante la finestra evento. Dallo screenshot si vede un evento a tempo con range Lv.23-24, classifica personale, total points e reward per fasi.",
+			extraSummary: "Enhance Raven premia chi concentra potenziamenti Raven e consumo stamina durante la finestra evento. ",
 			details: [
 				{
 					title: "Meccaniche",
@@ -645,9 +645,9 @@
 			en: {
 				tag: "Raven Event",
 				summary: "Point event focused on Raven growth: spend Raven Fruits and Stamina to collect milestone and ranking points.",
-				extraSummary: "Enhance Raven rewards players who concentrate Raven upgrades and Stamina use during the event window. The screenshot shows a timed event with Lv.23-24 range, personal ranking, total points, and phase rewards.",
+				extraSummary: "Enhance Raven rewards players who concentrate Raven upgrades and Stamina use during the event window. ",
 				details: [
-					{ title: "Mechanics", items: ["Timed event with personal ranking and total points.", "The screenshot shows Current Range Lv.23-24 and personal ranking.", "Rewards are split into phases: Phase 1 at 1,500 points, Phase 2 at 10,000, Phase 3 at 20,000, and Phase 4 at 30,000."] },
+					{ title: "Mechanics", items: ["Timed event with personal ranking and total points.",  "Rewards are split into phases: Phase 1 at 1,500 points, Phase 2 at 10,000, Phase 3 at 20,000, and Phase 4 at 30,000."] },
 					{ title: "How to score", items: ["Consume Raven Fruits: every 10 Raven Fruits grant points.", "Spend Stamina for fast points.", "Packs containing diamonds grant extra points."] },
 					{ title: "Strategy", items: ["Save Raven Fruits and Stamina before the event.", "Use Stamina when close to a milestone or when pushing ranking.", "If it overlaps Alliance Duel Day 1, sync Raven Fruits and Stamina to score in both events."] }
 				],
@@ -657,9 +657,9 @@
 			es: {
 				tag: "Evento Raven",
 				summary: "Evento de puntos centrado en Raven: consume Raven Fruits y Stamina para conseguir hitos y ranking.",
-				extraSummary: "Enhance Raven premia concentrar mejoras de Raven y consumo de Stamina durante la ventana del evento. La pantalla muestra rango Lv.23-24, ranking personal, puntos totales y recompensas por fase.",
+				extraSummary: "Enhance Raven premia concentrar mejoras de Raven y consumo de Stamina durante la ventana del evento.",
 				details: [
-					{ title: "Mecanicas", items: ["Evento temporizado con ranking personal y puntos totales.", "La pantalla muestra Current Range Lv.23-24 y ranking personal.", "Las recompensas se dividen en fases: 1.500, 10.000, 20.000 y 30.000 puntos."] },
+					{ title: "Mecanicas", items: ["Evento temporizado con ranking personal y puntos totales.", "Las recompensas se dividen en fases: 1.500, 10.000, 20.000 y 30.000 puntos."] },
 					{ title: "Como puntuar", items: ["Consume Raven Fruits: cada 10 Raven Fruits dan puntos.", "Consume Stamina para sumar puntos rapido.", "Los packs con diamantes dan puntos extra."] },
 					{ title: "Estrategia", items: ["Guarda Raven Fruits y Stamina antes del evento.", "Usa Stamina cuando estes cerca de un hito o quieras subir ranking.", "Si coincide con Alliance Duel Day 1, sincroniza Raven Fruits y Stamina para puntuar en ambos."] }
 				],
@@ -669,9 +669,9 @@
 			fr: {
 				tag: "Evenement Raven",
 				summary: "Evenement a points axe sur Raven: depense Raven Fruits et Stamina pour gagner paliers et classement.",
-				extraSummary: "Enhance Raven recompense les joueurs qui concentrent ameliorations Raven et depense de Stamina pendant l'evenement. L'ecran montre la plage Lv.23-24, classement personnel, points totaux et recompenses par phase.",
+				extraSummary: "Enhance Raven recompense les joueurs qui concentrent ameliorations Raven et depense de Stamina pendant l'evenement.",
 				details: [
-					{ title: "Mecaniques", items: ["Evenement limite avec classement personnel et points totaux.", "L'ecran montre Current Range Lv.23-24 et le classement personnel.", "Recompenses par phases: 1 500, 10 000, 20 000 et 30 000 points."] },
+					{ title: "Mecaniques", items: ["Evenement limite avec classement personnel et points totaux.", "Recompenses par phases: 1 500, 10 000, 20 000 et 30 000 points."] },
 					{ title: "Gagner des points", items: ["Consomme Raven Fruits: chaque 10 Raven Fruits donnent des points.", "Depense Stamina pour gagner vite des points.", "Les packs avec diamants donnent des points bonus."] },
 					{ title: "Strategie", items: ["Garde Raven Fruits et Stamina avant l'evenement.", "Utilise Stamina pres d'un palier ou pour pousser le classement.", "Si l'evenement chevauche Alliance Duel Day 1, synchronise Raven Fruits et Stamina pour marquer dans les deux."] }
 				],
@@ -681,9 +681,9 @@
 			de: {
 				tag: "Raven-Event",
 				summary: "Punkteevent fuer Raven-Wachstum: Gib Raven Fruits und Stamina aus, um Meilensteine und Ranglistenpunkte zu sammeln.",
-				extraSummary: "Enhance Raven belohnt Spieler, die Raven-Upgrades und Stamina-Verbrauch im Eventfenster buendeln. Der Screenshot zeigt Lv.23-24 Range, persoenliches Ranking, Gesamtpunkte und Phasenbelohnungen.",
+				extraSummary: "Enhance Raven belohnt Spieler, die Raven-Upgrades und Stamina-Verbrauch im Eventfenster buendeln. ",
 				details: [
-					{ title: "Mechanik", items: ["Zeitevent mit persoenlicher Rangliste und Gesamtpunkten.", "Der Screenshot zeigt Current Range Lv.23-24 und persoenliches Ranking.", "Belohnungen in Phasen: 1.500, 10.000, 20.000 und 30.000 Punkte."] },
+					{ title: "Mechanik", items: ["Zeitevent mit persoenlicher Rangliste und Gesamtpunkten.",  "Belohnungen in Phasen: 1.500, 10.000, 20.000 und 30.000 Punkte."] },
 					{ title: "Punkte erhalten", items: ["Raven Fruits verbrauchen: je 10 Raven Fruits geben Punkte.", "Stamina fuer schnelle Punkte ausgeben.", "Diamanten-Packs geben Zusatzpunkte."] },
 					{ title: "Strategie", items: ["Raven Fruits und Stamina vor dem Event sparen.", "Stamina nutzen, wenn ein Meilenstein nah ist oder du im Ranking steigen willst.", "Wenn es mit Alliance Duel Day 1 zusammenfaellt, Raven Fruits und Stamina fuer beide Events synchronisieren."] }
 				],
@@ -693,9 +693,9 @@
 			ja: {
 				tag: "Ravenイベント",
 				summary: "Raven強化のポイントイベント。Raven FruitsとStaminaを使い、マイルストーンとランキングを狙います。",
-				extraSummary: "Enhance Raven はイベント中にRaven強化とStamina消費を集中するプレイヤーに有利です。画面にはLv.23-24範囲、個人順位、合計ポイント、段階報酬が表示されます。",
+				extraSummary: "Enhance Raven はイベント中にRaven強化とStamina消費を集中するプレイヤーに有利です。",
 				details: [
-					{ title: "仕組み", items: ["個人ランキングと合計ポイントがある時間制イベントです。", "画面にはCurrent Range Lv.23-24と個人順位が表示されています。", "報酬はPhase 1が1,500、Phase 2が10,000、Phase 3が20,000、Phase 4が30,000ポイントです。"] },
+					{ title: "仕組み", items: ["個人ランキングと合計ポイントがある時間制イベントです。",  "報酬はPhase 1が1,500、Phase 2が10,000、Phase 3が20,000、Phase 4が30,000ポイントです。"] },
 					{ title: "ポイント獲得", items: ["Raven Fruitsを消費します。10個ごとにポイントを得ます。", "Staminaを使うと素早くポイントを稼げます。", "ダイヤを含むパックでも追加ポイントを得ます。"] },
 					{ title: "戦略", items: ["イベント前にRaven FruitsとStaminaを温存します。", "マイルストーン直前やランキング狙いでStaminaを使います。", "Alliance Duel Day 1と重なる場合、Raven FruitsとStaminaを合わせて両方でポイントを稼ぎます。"] }
 				],
