@@ -95,7 +95,7 @@
 			heroFaction: "Hero Faction",
 			level: "Level",
 			partialData: "Partial data for {building}: the source site does not cover every step in this range. The resources shown only sum the available levels.",
-			buildingNote: "{building} from level {current} to level {target}. Data source: lastasylumguide.com/calculators/buildings. The source site warns that data can change with patches.",
+			buildingNote: "{building} from level {current} to level {target}. ",
 			eventScoringTitle: "Action points",
 			eventSource: "Source: {source}",
 			openEvent: "Open {name} full screen"
@@ -191,7 +191,7 @@
 			heroFaction: "Fazione Eroe",
 			level: "Livello",
 			partialData: "Dati parziali per {building}: il sito sorgente non copre ogni step in questo intervallo. Le risorse mostrate sommano solo i livelli disponibili.",
-			buildingNote: "{building} dal livello {current} al livello {target}. Fonte dati: lastasylumguide.com/calculators/buildings. Il sito sorgente avvisa che i dati possono cambiare con le patch.",
+			buildingNote: "{building} dal livello {current} al livello {target}. ",
 			eventScoringTitle: "Punti azioni",
 			eventSource: "Fonte: {source}",
 			openEvent: "Apri {name} a schermo intero"
@@ -287,7 +287,7 @@
 			heroFaction: "Faccion del heroe",
 			level: "Nivel",
 			partialData: "Datos parciales para {building}: la fuente no cubre todos los pasos de este intervalo. Los recursos mostrados solo suman los niveles disponibles.",
-			buildingNote: "{building} del nivel {current} al nivel {target}. Fuente: lastasylumguide.com/calculators/buildings. La fuente avisa que los datos pueden cambiar con parches.",
+			buildingNote: "{building} del nivel {current} al nivel {target}. ",
 			eventScoringTitle: "Puntos de accion",
 			eventSource: "Fuente: {source}",
 			openEvent: "Abrir {name} a pantalla completa"
@@ -383,7 +383,7 @@
 			heroFaction: "Faction du heros",
 			level: "Niveau",
 			partialData: "Donnees partielles pour {building}: la source ne couvre pas toutes les etapes de cet intervalle. Les ressources affichees additionnent seulement les niveaux disponibles.",
-			buildingNote: "{building} du niveau {current} au niveau {target}. Source: lastasylumguide.com/calculators/buildings. La source indique que les donnees peuvent changer avec les patchs.",
+			buildingNote: "{building} du niveau {current} au niveau {target}. ",
 			eventScoringTitle: "Points d'action",
 			eventSource: "Source: {source}",
 			openEvent: "Ouvrir {name} en plein ecran"
@@ -479,7 +479,7 @@
 			heroFaction: "Heldenfraktion",
 			level: "Level",
 			partialData: "Teilweise Daten fuer {building}: Die Quelle deckt nicht jeden Schritt in diesem Bereich ab. Die angezeigten Ressourcen summieren nur verfuegbare Level.",
-			buildingNote: "{building} von Level {current} bis Level {target}. Datenquelle: lastasylumguide.com/calculators/buildings. Die Quelle weist darauf hin, dass Daten sich mit Patches aendern koennen.",
+			buildingNote: "{building} von Level {current} bis Level {target}. ",
 			eventScoringTitle: "Aktionspunkte",
 			eventSource: "Quelle: {source}",
 			openEvent: "{name} im Vollbild oeffnen"

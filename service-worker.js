@@ -1,5 +1,5 @@
-const STATIC_CACHE = "lap-static-v19";
-const RUNTIME_CACHE = "lap-runtime-v19";
+const STATIC_CACHE = "lap-static-v20";
+const RUNTIME_CACHE = "lap-runtime-v20";
 const APP_SHELL = [
 	"./",
 	"./index.html",
