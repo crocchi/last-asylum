@@ -215,7 +215,7 @@ input[type="submit"].primary:hover {
 
 .quick-links {
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 8.5rem));
+	grid-template-columns: repeat(4, minmax(0, 8.5rem));
 	gap: 1rem;
 	justify-content: flex-start;
 	margin-top: 1.4rem;
@@ -1385,6 +1385,62 @@ body.hero-modal-open {
 	margin-top: 1rem;
 }
 
+.terms-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+	margin-top: 2.4rem;
+	text-align: left;
+}
+
+.term-card {
+	display: grid;
+	align-content: start;
+	gap: 0.65rem;
+	min-height: 100%;
+	padding: 1.25rem;
+	border: 1px solid rgba(182, 190, 118, 0.16);
+	border-radius: 1rem;
+	background: rgba(255, 255, 255, 0.035);
+	box-shadow: 0 1em 2.2em rgba(0, 0, 0, 0.18);
+}
+
+.term-card-featured {
+	grid-column: span 2;
+	border-color: rgba(244, 210, 122, 0.28);
+	background: linear-gradient(135deg, rgba(244, 210, 122, 0.1), rgba(127, 139, 58, 0.12));
+}
+
+.term-label {
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	min-height: 2rem;
+	padding: 0.25rem 0.65rem;
+	border: 1px solid rgba(244, 210, 122, 0.26);
+	border-radius: 999px;
+	color: #f4d27a;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.term-card h3 {
+	margin: 0;
+	color: var(--lap-paper);
+	font-size: 1.05rem;
+	letter-spacing: 0;
+}
+
+.term-card p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.74);
+	font-size: 0.92rem;
+	line-height: 1.65;
+}
+
 .building-calculator {
 	max-width: 64rem;
 	margin: 2.5em auto 0;
@@ -1661,8 +1717,13 @@ body.hero-modal-open {
 	.hero-skill-meta,
 	.hero-compare-meta,
 	.hero-compare-stats,
-	.hero-compare-skill-meta {
+	.hero-compare-skill-meta,
+	.terms-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.term-card-featured {
+		grid-column: span 1;
 	}
 
 	.building-form-grid,
@@ -1692,6 +1753,10 @@ body.hero-modal-open {
 
 	#banner .content {
 		gap: 2em;
+	}
+
+	.quick-links {
+		grid-template-columns: repeat(2, minmax(0, 8.5rem));
 	}
 }
 
